@@ -23,6 +23,7 @@ class AddCustomerActivity : BaseActivity() {
 
     private fun checkFields() {
         if (etEmail.text.isNullOrEmpty()) {
+            showWarning(R.string.warning_empty_fields)
             return
         }
         saveCustomer()

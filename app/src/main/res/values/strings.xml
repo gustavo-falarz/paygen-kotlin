@@ -17,7 +17,6 @@
     <string name="label_cadastrar">Cadastrar</string>
     <string name="ok">Ok</string>
     <string name="error_title">Encontramos alguns problemas</string>
-    <string name="title_success">Sucesso</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -41,4 +40,5 @@
     <string name="message_account_activation">Um email de ativação foi enviado para o email
         acima, ative seu cadastro para prosseguir.</string>
     <string name="title_success">Sucesso</string>
+    <string name="warning_empty_fields">Parece que alguns campos estão vazios, verifique e tente novamente.</string>
 </resources>
