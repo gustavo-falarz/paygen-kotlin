@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootView"
     android:layout_width="match_parent"
@@ -7,14 +8,28 @@
     android:orientation="vertical"
     tools:context="com.example.gustavobatista.paygen.activity.AddCustomerActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="0.8">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:orientation="vertical">
 
 
@@ -42,10 +57,11 @@
         android:id="@+id/btCadastrar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_height"
-        android:background="@color/green_400"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/green_400"
         android:text="@string/label_cadastrar"
         android:textAllCaps="false"
-        android:textColor="@color/white" />
-
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
 
 </LinearLayout>

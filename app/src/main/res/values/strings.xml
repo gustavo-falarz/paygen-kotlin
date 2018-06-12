@@ -38,4 +38,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="message_account_activation">Um email de ativação foi enviado para o email
+        acima, ative seu cadastro para prosseguir.</string>
+    <string name="title_success">Sucesso</string>
 </resources>

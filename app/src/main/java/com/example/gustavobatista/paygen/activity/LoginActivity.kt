@@ -7,7 +7,7 @@ class LoginActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_customer)
-        setupToolbar(R.string.title_new_customer)
+        setContentView(R.layout.activity_login)
+
     }
 }

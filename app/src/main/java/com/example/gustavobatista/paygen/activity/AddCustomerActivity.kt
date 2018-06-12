@@ -8,6 +8,8 @@ import io.reactivex.Observer
 import io.reactivex.annotations.NonNull
 import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.activity_add_customer.*
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.yesButton
 
 
 class AddCustomerActivity : BaseActivity() {
@@ -16,17 +18,17 @@ class AddCustomerActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_customer)
         setupToolbar(R.string.title_new_customer)
+        btCadastrar.setOnClickListener { checkFields() }
     }
 
-    fun checkFields() {
+    private fun checkFields() {
         if (etEmail.text.isNullOrEmpty()) {
             return
         }
         saveCustomer()
-
     }
 
-    fun saveCustomer() {
+    private fun saveCustomer() {
         val customer = Customer()
         customer.cpf = etEmail.text.toString()
 
@@ -37,12 +39,13 @@ class AddCustomerActivity : BaseActivity() {
                     }
 
                     override fun onNext(@NonNull customer: Customer) {
-                        finish()
                         closeProgress()
+                        handleResult()
                     }
 
                     override fun onError(@NonNull e: Throwable) {
-
+                        handleException(e)
+                        closeProgress()
                     }
 
                     override fun onComplete() {
@@ -51,4 +54,9 @@ class AddCustomerActivity : BaseActivity() {
                 })
     }
 
+    private fun handleResult() {
+        alert(getString(R.string.message_account_activation), getString(R.string.title_success)) {
+            yesButton { finish() }
+        }
+    }
 }
