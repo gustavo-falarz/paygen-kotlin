@@ -31,7 +31,7 @@ class AddCustomerActivity : BaseActivity() {
 
     private fun saveCustomer() {
         val customer = Customer()
-        customer.cpf = etEmail.text.toString()
+        customer.email = etEmail.text.toString()
 
         CustomerService.addUser(customer).applySchedulers()
                 .subscribe(object : Observer<Customer> {

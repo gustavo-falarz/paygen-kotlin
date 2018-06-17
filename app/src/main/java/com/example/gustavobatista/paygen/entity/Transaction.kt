@@ -18,6 +18,11 @@ open class Transaction {
         CASH
 
     }
+    enum class Status{
+        PAID,
+        PENDING,
+        CANCELED
+    }
 
 
 }

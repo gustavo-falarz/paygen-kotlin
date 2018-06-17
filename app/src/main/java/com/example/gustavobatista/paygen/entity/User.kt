@@ -6,15 +6,13 @@ package com.example.gustavobatista.paygen.entity
  */
 open class User {
 
-    var id: String? = null
+    lateinit var id: String
 
-    var name: String? = null
+    lateinit var name: String
 
-    var email: String? = null
+    lateinit var email: String
 
-    var login: String? = null
+    lateinit var password: String
 
-    var password: String? = null
-
-    var phone: String? = null
+    lateinit var phone: String
 }

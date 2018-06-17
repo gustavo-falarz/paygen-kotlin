@@ -7,5 +7,5 @@ package com.example.gustavobatista.paygen.entity
 
 class Customer : User() {
 
-    var cpf: String? = null
+    lateinit var cpf: String
 }

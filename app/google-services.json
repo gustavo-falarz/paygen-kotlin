@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "776697389842",
+    "firebase_url": "https://paygen-4975d.firebaseio.com",
+    "project_id": "paygen-4975d",
+    "storage_bucket": "paygen-4975d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776697389842:android:533f8a79d0c785e7",
+        "android_client_info": {
+          "package_name": "com.example.gustavobatista.paygen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "776697389842-a1nnv5enkk2t07brkqooqts83ml1ercv.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "776697389842-a1nnv5enkk2t07brkqooqts83ml1ercv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo0S-LCOvTf-nSevPB8hyNtchItcDQiKI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
