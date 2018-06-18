@@ -8,5 +8,6 @@ class AddPaymentMethodActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_payment_method)
+        setupToolbar(R.string.title_add_credit_card)
     }
 }
