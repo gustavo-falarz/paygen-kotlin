@@ -41,11 +41,11 @@
         acima, ative seu cadastro para prosseguir.</string>
     <string name="title_success">Sucesso</string>
     <string name="warning_empty_fields">Parece que alguns campos estão vazios, verifique e tente novamente.</string>
-    <string name="card_number">Card number</string>
+    <string name="card_number">Número do cartão</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="cvv">CVV</string>
     <string name="card_holder">Nome no cartão</string>
     <string name="card_expiry_mm">MM</string>
     <string name="card_expiry_aa">AA</string>
-    <string name="title_add_credit_card">Add cartão de crédito</string>
+    <string name="title_add_credit_card">Novo cartão de crédito</string>
 </resources>
