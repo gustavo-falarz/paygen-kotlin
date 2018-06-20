@@ -1,11 +1,10 @@
 package com.example.gustavobatista.paygen
 
-import android.app.Application
+import com.orm.SugarApp
 
-class PaygenApplication:Application() {
+class PaygenApplication:SugarApp() {
 
     override fun onCreate() {
         super.onCreate()
-
     }
 }

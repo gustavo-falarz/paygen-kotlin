@@ -48,4 +48,5 @@
     <string name="card_expiry_mm">MM</string>
     <string name="card_expiry_aa">AA</string>
     <string name="title_add_credit_card">Novo cartão de crédito</string>
+    <string name="message_payment_method_added">Método de pagamento adicionado com sucesso.</string>
 </resources>
