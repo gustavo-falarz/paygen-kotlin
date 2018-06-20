@@ -47,6 +47,10 @@
     <string name="card_holder">Nome no cartão</string>
     <string name="card_expiry_mm">MM</string>
     <string name="card_expiry_aa">AA</string>
-    <string name="title_add_credit_card">Novo cartão de crédito</string>
+    <string name="title_add_credit_card">Novo cartão de crédito.</string>
     <string name="message_payment_method_added">Método de pagamento adicionado com sucesso.</string>
+    <string name="title_payment_methods">Meios de pagamento</string>
+    <string name="warning_invalid_card">Número do cartão de crédito é inválido.</string>
+    <string name="warning_expired_card">Data de expiração inválida.</string>
+    <string name="warning_invalid_security_code">Código de segurança inválido.</string>
 </resources>
