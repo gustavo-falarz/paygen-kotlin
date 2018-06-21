@@ -7,7 +7,10 @@ import com.example.gustavobatista.paygen.adapter.PaymentMethodAdapter
 import com.example.gustavobatista.paygen.entity.CreditCard
 import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_payment_methods.*
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.noButton
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.yesButton
 
 class PaymentMethodActivity : BaseActivity() {
 
@@ -27,8 +30,19 @@ class PaymentMethodActivity : BaseActivity() {
 
     private fun initRecycler() {
         val paymentMethods = SugarRecord.listAll(CreditCard::class.java)
-        val adapter = PaymentMethodAdapter(paymentMethods) {}
+        val adapter = PaymentMethodAdapter(paymentMethods) { checkDelete(it) }
         recyclerView.adapter = adapter
     }
 
+    private fun checkDelete(creditCard: CreditCard) {
+        alert(getString(R.string.message_delete), getString(R.string.title_delete)) {
+            positiveButton(R.string.yes) { deleteMethod(creditCard) }
+            negativeButton(R.string.no) { }
+        }.show()
+    }
+
+    private fun deleteMethod(creditCard: CreditCard) {
+        SugarRecord.delete(creditCard)
+        initRecycler()
+    }
 }

@@ -54,4 +54,8 @@
     <string name="warning_expired_card">Data de expiração inválida.</string>
     <string name="warning_invalid_security_code">Código de segurança inválido.</string>
     <string name="warning_invalid_carrier">Bandeira do cartão inválida</string>
+    <string name="title_delete">Excluir</string>
+    <string name="message_delete">Deseja excluir o meio de pagamento?</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
 </resources>

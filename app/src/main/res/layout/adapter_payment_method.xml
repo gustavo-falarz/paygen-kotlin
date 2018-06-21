@@ -2,44 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
     android:layout_marginBottom="6dp"
     android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".80"
-        android:orientation="vertical"
-        android:padding="8dp">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvCardNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="**** 9808"
-            android:textSize="17sp" />
-
-        <ImageView
-            android:id="@+id/imCarrier"
-            android:layout_width="60dp"
-            android:layout_height="40dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/btDeleteMethod"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".20"
-        android:background="@color/red_400">
-
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:padding="16dp"
-            android:src="@drawable/ic_action_delete_white" />
+            android:layout_weight=".80"
+            android:orientation="vertical"
+            android:padding="8dp">
 
+            <TextView
+                android:id="@+id/tvCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="**** 9808"
+                android:textSize="17sp" />
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imCarrier"
+                android:layout_width="50dp"
+                android:layout_height="30dp" />
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btDeleteMethod"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".20"
+            android:background="@color/red_400">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:src="@drawable/ic_action_delete_white" />
+
+        </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>
