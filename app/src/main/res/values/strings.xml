@@ -53,4 +53,5 @@
     <string name="warning_invalid_card">Número do cartão de crédito é inválido.</string>
     <string name="warning_expired_card">Data de expiração inválida.</string>
     <string name="warning_invalid_security_code">Código de segurança inválido.</string>
+    <string name="warning_invalid_carrier">Bandeira do cartão inválida</string>
 </resources>

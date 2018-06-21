@@ -10,7 +10,9 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
+import com.example.gustavobatista.paygen.entity.CreditCard
 import com.example.gustavobatista.paygen.util.StringUtils
+import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.startActivity

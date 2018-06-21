@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/card_number"
             android:inputType="number"
-            android:maxLength="14"
+            android:maxLength="16"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 

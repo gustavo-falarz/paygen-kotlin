@@ -8,6 +8,7 @@ import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.CreditCard
 import com.example.gustavobatista.paygen.util.StringUtils.maskNumber
 import kotlinx.android.synthetic.main.adapter_payment_method.view.*
+import com.example.gustavobatista.paygen.util.ImageUtil.load
 
 class PaymentMethodAdapter(private val items: List<CreditCard>, private val listener: (CreditCard) -> Unit) :
         RecyclerView.Adapter<PaymentMethodAdapter.ViewHolder>() {
@@ -26,8 +27,9 @@ class PaymentMethodAdapter(private val items: List<CreditCard>, private val list
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(creditCard: CreditCard, listener: (CreditCard) -> Unit) = with(itemView) {
             tvCardNumber.text = creditCard.cardNumber.maskNumber()
+            imCarrier.load(creditCard.carrier.logo){ request -> request.resize(200, 100).centerInside()}
+            btDeleteMethod.setOnClickListener{listener(creditCard)}
         }
-
     }
 }
 

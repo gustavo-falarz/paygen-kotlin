@@ -10,6 +10,7 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.yesButton
 import com.example.gustavobatista.paygen.util.StringUtils.isValidCreditcard
 import com.example.gustavobatista.paygen.util.FieldUtils.isEmpty
+import com.example.gustavobatista.paygen.util.StringUtils
 
 
 class AddPaymentMethodActivity : BaseActivity() {
@@ -32,6 +33,8 @@ class AddPaymentMethodActivity : BaseActivity() {
 
             invalidSecurityCode() -> showWarning(getString(R.string.warning_invalid_security_code))
 
+            invalidCarrier() -> showWarning(getString(R.string.warning_invalid_carrier))
+
             else -> saveCard()
 
         }
@@ -45,6 +48,7 @@ class AddPaymentMethodActivity : BaseActivity() {
             creditCard.expiryMonth = etExpiryMonth.text.toString()
             creditCard.expiryYear = etExpiryYear.text.toString()
             creditCard.securityCode = etSecurityCode.text.toString()
+            creditCard.carrier = StringUtils.getCarrier(etCardNumber.text.toString())
             SugarRecord.save(creditCard)
         }
         alert(getString(R.string.message_payment_method_added),
@@ -60,7 +64,7 @@ class AddPaymentMethodActivity : BaseActivity() {
     }
 
     private fun invalidCreditCard(): Boolean {
-        return etCardNumber.text.toString().isValidCreditcard()
+        return !etCardNumber.text.toString().isValidCreditcard()
     }
 
     private fun invalidExpiryDate(): Boolean {
@@ -71,6 +75,10 @@ class AddPaymentMethodActivity : BaseActivity() {
 
     private fun invalidSecurityCode(): Boolean {
         return etSecurityCode.text.toString().length < 3
+    }
+
+    private fun invalidCarrier():Boolean{
+        return StringUtils.getCarrier(etCardNumber.text.toString())== CreditCard.Carrier.INVALID
     }
 }
 
