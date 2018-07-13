@@ -58,4 +58,7 @@
     <string name="message_delete">Deseja excluir o meio de pagamento?</string>
     <string name="yes">Sim</string>
     <string name="no">Não</string>
+    <string name="label_cards">Cartões</string>
+    <string name="label_logout">Logout</string>
+    <string name="label_estabelecimentos">Estabelecimentos</string>
 </resources>

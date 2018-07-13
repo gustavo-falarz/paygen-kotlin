@@ -8,11 +8,9 @@ import com.example.gustavobatista.paygen.entity.CreditCard
 import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_payment_methods.*
 import org.jetbrains.anko.alert
-import org.jetbrains.anko.noButton
 import org.jetbrains.anko.startActivity
-import org.jetbrains.anko.yesButton
 
-class PaymentMethodActivity : BaseActivity() {
+class PaymentMethodsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

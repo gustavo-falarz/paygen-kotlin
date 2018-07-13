@@ -1,18 +1,14 @@
 package com.example.gustavobatista.paygen.activity
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
-import com.example.gustavobatista.paygen.entity.CreditCard
-import com.example.gustavobatista.paygen.util.StringUtils
-import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.startActivity
@@ -61,23 +57,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_camera -> {
-                startActivity<PaymentMethodActivity>()
+            R.id.nav_payment_methods -> {
+                startActivity<PaymentMethodsActivity>()
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_providers -> {
+                startActivity<ProvidersActivity>()
             }
-            R.id.nav_slideshow -> {
-
-            }
-            R.id.nav_manage -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
+            R.id.nav_logout -> {
+                startActivity<LoginActivity>()
+                finish()
             }
         }
 

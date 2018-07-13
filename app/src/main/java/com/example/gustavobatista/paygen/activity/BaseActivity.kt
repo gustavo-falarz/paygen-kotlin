@@ -34,11 +34,10 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     fun setupToolbar(title: Int) {
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val toolbar = supportActionBar
         when {
             toolbar != null -> {
                 toolbar.setTitle(title)
-                setSupportActionBar(toolbar)
             }
             else -> Log.d(tag, "Toolbar not found, check if you have it in your layout " +
                     "or if setContentView() was called.")
