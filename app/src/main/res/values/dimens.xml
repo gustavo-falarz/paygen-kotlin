@@ -8,4 +8,5 @@
     <dimen name="button_label_size">17sp</dimen>
     <dimen name="button_height">60dp</dimen>
     <dimen name="actionBarSize">60dp</dimen>
+    <dimen name="categorie_icon_size">40dp</dimen>
 </resources>
