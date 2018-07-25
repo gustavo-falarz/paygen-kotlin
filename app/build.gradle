@@ -28,10 +28,11 @@ android {
             buildConfigField('String', 'URL_BASE', properties('release.server.url'))
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:support-v4:$google_support_lib_version"
     implementation 'com.firebaseui:firebase-ui-auth:3.3.1'
     implementation "com.google.android.gms:play-services-auth:$google_gms_lib_version"

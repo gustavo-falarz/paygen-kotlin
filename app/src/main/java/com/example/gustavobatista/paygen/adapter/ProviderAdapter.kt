@@ -24,7 +24,7 @@ class ProviderAdapter(private val items: List<Provider>) :
 
         fun bindView(provider: Provider, listener: (Provider) -> Unit) = with(itemView) {
             tvProviderName.text = provider.name
-            imBannerProvider.load(provider.banner) { request -> request.resize(200, 100).centerInside() }
+            imBannerProvider.load(provider.banner) { request -> request.fit() }
 
         }
     }
