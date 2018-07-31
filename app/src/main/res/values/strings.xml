@@ -61,4 +61,8 @@
     <string name="label_cards">Cartões</string>
     <string name="label_logout">Logout</string>
     <string name="label_estabelecimentos">Estabelecimentos</string>
+    <string name="title_sobre">Sobre</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_open_hours">Horários</string>
+    <string name="checkIn">Check-in</string>
 </resources>

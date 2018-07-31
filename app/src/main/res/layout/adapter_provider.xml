@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/parentView"
     android:orientation="vertical">
 
     <FrameLayout
@@ -21,11 +22,14 @@
 
 
     <LinearLayout
+        android:background="@color/black_transparent_70"
         android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:padding="12dp"
             android:id="@+id/tvProviderName"
             android:layout_width="wrap_content"

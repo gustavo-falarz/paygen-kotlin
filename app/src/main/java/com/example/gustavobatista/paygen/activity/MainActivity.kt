@@ -1,11 +1,10 @@
 package com.example.gustavobatista.paygen.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
@@ -13,8 +12,8 @@ import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.adapter.ProviderAdapter
 import com.example.gustavobatista.paygen.entity.Provider
 import com.example.gustavobatista.paygen.service.ProviderService
+import com.example.gustavobatista.paygen.util.Constants
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_providers.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.jetbrains.anko.startActivity
@@ -46,25 +45,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         }
     }
 
-    private fun getProviders() {
-        showProgress()
-        ProviderService.getProviders().applySchedulers().subscribe(
-                {
-                    setAdapter(it)
-                    closeProgress()
-                },
-                {
-                    handleException(it)
-                    closeProgress()
-                }
-        )
-    }
-
-    private fun setAdapter(providers: List<Provider>) {
-        val adapter = ProviderAdapter(providers)
-        recyclerViewProviders.adapter = adapter
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         return true
@@ -93,5 +73,33 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun getProviders() {
+        showProgress()
+        ProviderService.getProviders().applySchedulers().subscribe(
+                {
+                    setAdapter(it)
+                    closeProgress()
+                },
+                {
+                    handleException(it)
+                    closeProgress()
+                }
+        )
+    }
+
+    private fun setAdapter(providers: List<Provider>) {
+        val adapter = ProviderAdapter(providers){
+            callActivity(it)
+        }
+        recyclerViewProviders.adapter = adapter
+    }
+
+
+    private fun callActivity(provider: Provider) {
+        val intent = Intent(this, ProviderActivity::class.java)
+        intent.putExtra(Constants.TRANSITION_KEY_PROVIDER, provider)
+        startActivity(intent)
     }
 }

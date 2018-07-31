@@ -282,4 +282,9 @@
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
     <color name="confirmation_button">#43A047</color>
+
+    <color name="black_transparent_70">#B3000000</color>
+    <color name="black_transparent_60">#99000000</color>
+    <color name="black_transparent_50">#80000000</color>
+    <color name="black_transparent_40">#66000000</color>
 </resources>

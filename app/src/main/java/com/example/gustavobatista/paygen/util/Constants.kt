@@ -5,5 +5,6 @@ package com.example.gustavobatista.paygen.util
  */
 
 object Constants {
+    const val TRANSITION_KEY_PROVIDER: String = "provider"
 
 }

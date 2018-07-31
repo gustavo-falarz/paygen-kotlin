@@ -9,4 +9,6 @@
     <dimen name="button_height">60dp</dimen>
     <dimen name="actionBarSize">60dp</dimen>
     <dimen name="categorie_icon_size">40dp</dimen>
+    <dimen name="text_horizontal_spacing">12dp</dimen>
+    <dimen name="vertical_spacing">12dp</dimen>
 </resources>

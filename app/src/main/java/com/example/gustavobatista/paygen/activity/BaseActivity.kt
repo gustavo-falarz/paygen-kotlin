@@ -33,7 +33,12 @@ open class BaseActivity : AppCompatActivity() {
         return subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread())
     }
 
-    fun setupToolbar(title: Int) {
+
+    fun setupToolbar(title: Int){
+        setupToolbar(getString(title))
+    }
+
+    fun setupToolbar(title: String) {
         val toolbar = supportActionBar
         when {
             toolbar != null -> {

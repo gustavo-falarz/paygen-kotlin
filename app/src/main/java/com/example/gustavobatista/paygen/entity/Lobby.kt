@@ -1,6 +1,8 @@
 package com.example.gustavobatista.paygen.entity
 
-class Lobby {
+import java.io.Serializable
+
+class Lobby : Serializable{
 
     lateinit var customerList: List<Customer>
 }

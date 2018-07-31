@@ -1,6 +1,8 @@
 package com.example.gustavobatista.paygen.entity
 
-open class Transaction {
+import java.io.Serializable
+
+open class Transaction:Serializable {
 
     var purchaseId: String? = null
 

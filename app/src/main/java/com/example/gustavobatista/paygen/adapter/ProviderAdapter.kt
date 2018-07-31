@@ -9,8 +9,9 @@ import com.example.gustavobatista.paygen.entity.Provider
 import kotlinx.android.synthetic.main.adapter_provider.view.*
 import com.example.gustavobatista.paygen.util.ImageUtil.load
 
-class ProviderAdapter(private val items: List<Provider>) :
+class ProviderAdapter(private val items: List<Provider>, private val listener: (Provider) -> Unit) :
         RecyclerView.Adapter<ProviderAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.adapter_provider,
                 parent, false)
@@ -18,13 +19,15 @@ class ProviderAdapter(private val items: List<Provider>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bindView(items[position], listener)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindView(provider: Provider, listener: (Provider) -> Unit) = with(itemView) {
             tvProviderName.text = provider.name
-            imBannerProvider.load(provider.banner) { request -> request.fit() }
+            imBannerProvider.load(provider.info.banner) { request -> request.fit() }
+            parentView.setOnClickListener{listener(provider)}
 
         }
     }

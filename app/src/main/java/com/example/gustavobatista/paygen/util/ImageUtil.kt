@@ -12,7 +12,7 @@ import com.squareup.picasso.RequestCreator
 object ImageUtil {
 
     fun ImageView.load(path: String, request: (RequestCreator) -> RequestCreator) {
-        request(context.picasso.load(path)).placeholder(R.drawable.ic_mastercard).into(this)
+        request(context.picasso.load(path)).placeholder(R.drawable.ic_image_grey).into(this)
     }
 
     private val Context.picasso: Picasso

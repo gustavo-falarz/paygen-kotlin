@@ -6,6 +6,4 @@ package com.example.gustavobatista.paygen.entity
  */
 
 class Customer : User() {
-
-    lateinit var cpf: String
 }
