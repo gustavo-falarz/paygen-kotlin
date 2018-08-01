@@ -11,6 +11,9 @@ import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.adapter.ProviderAdapter
 import com.example.gustavobatista.paygen.entity.Provider
+import com.example.gustavobatista.paygen.fragment.CheckedInFragment
+import com.example.gustavobatista.paygen.fragment.ProvidersFragment
+import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.ProviderService
 import com.example.gustavobatista.paygen.util.Constants
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,17 +28,19 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-
-        recyclerViewProviders.layoutManager = LinearLayoutManager(this)
-
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
 
-        getProviders()
+        when (prefs.providerId) {
+            "" -> fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
+            else -> fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
+
+        }
     }
+
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -70,36 +75,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 finish()
             }
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
-        return true
-    }
-
-    private fun getProviders() {
-        showProgress()
-        ProviderService.getProviders().applySchedulers().subscribe(
-                {
-                    setAdapter(it)
-                    closeProgress()
-                },
-                {
-                    handleException(it)
-                    closeProgress()
-                }
-        )
-    }
-
-    private fun setAdapter(providers: List<Provider>) {
-        val adapter = ProviderAdapter(providers){
-            callActivity(it)
-        }
-        recyclerViewProviders.adapter = adapter
+        return false
     }
 
 
-    private fun callActivity(provider: Provider) {
-        val intent = Intent(this, ProviderActivity::class.java)
-        intent.putExtra(Constants.TRANSITION_KEY_PROVIDER, provider)
-        startActivity(intent)
-    }
 }

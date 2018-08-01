@@ -1,12 +1,10 @@
-package com.example.gustavobatista.paygen.activity
-
+package com.example.gustavobatista.paygen.fragment
 
 import android.app.Activity
+import android.app.Fragment
 import android.app.FragmentManager
 import android.app.FragmentTransaction
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
@@ -20,51 +18,12 @@ import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.yesButton
 
-
-/**
- * Created by Gustavo on 10/18/2017.
- */
-
-open class BaseActivity : AppCompatActivity() {
-
-    private val tag = "BaseActivity"
+open class BaseFragment : Fragment() {
     private var mProgress: Progress? = null
 
 
     fun <T> Observable<T>.applySchedulers(): Observable<T> {
         return subscribeOn(Schedulers.computation()).observeOn(AndroidSchedulers.mainThread())
-    }
-
-
-    fun setupToolbar(title: Int){
-        setupToolbar(getString(title))
-    }
-
-    fun setupToolbar(title: String) {
-        val toolbar = supportActionBar
-        when {
-            toolbar != null -> {
-                toolbar.setTitle(title)
-            }
-            else -> Log.d(tag, "Toolbar not found, check if you have it in your layout " +
-                    "or if setContentView() was called.")
-        }
-    }
-
-    fun setupActionBar() {
-        val ab = supportActionBar
-        ab?.setDisplayHomeAsUpEnabled(true)
-        ab?.setHomeButtonEnabled(true)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                onBackPressed()
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     fun handleException(exception: Throwable) {
@@ -95,7 +54,7 @@ open class BaseActivity : AppCompatActivity() {
 
     protected fun showProgress() {
         if (mProgress == null) {
-            mProgress = Progress(this)
+            mProgress = Progress(activity)
         }
         mProgress!!.show()
     }
