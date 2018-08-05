@@ -1,4 +1,4 @@
-package com.gfb.watchlist.util.converters
+package com.example.gustavobatista.paygen.service.converters
 
 import com.example.gustavobatista.paygen.util.ServerException
 

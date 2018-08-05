@@ -5,7 +5,7 @@ open class Item {
 
     var id: String? = null
 
-    var name: String? = null
+    var description: String? = null
 
     var value: Double = 0.toDouble()
 

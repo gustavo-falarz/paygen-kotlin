@@ -1,6 +1,8 @@
 package com.example.gustavobatista.paygen.util
 
 import com.example.gustavobatista.paygen.entity.CreditCard
+import java.text.NumberFormat
+import java.util.*
 
 object StringUtils {
 
@@ -31,7 +33,7 @@ object StringUtils {
     }
 
     fun getCarrier(cardNumber: String): CreditCard.Carrier {
-        return when{
+        return when {
             CreditCard.Carrier.AMEX.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.AMEX
             CreditCard.Carrier.MASTERCARD.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.MASTERCARD
             CreditCard.Carrier.VISA.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.VISA
@@ -41,16 +43,16 @@ object StringUtils {
         }
     }
 
-//    enum class Carrier(val regex: String) {
-//        VISA ("^4[0-9]{12}(?:[0-9]{3})?$"),
-//        MASTERCARD ("^5[1-5][0-9]{14}$"),
-//        AMEX ("^3[47][0-9]{13}$"),
-//        DINERS ("^3(?:0[0-5]|[68][0-9])[0-9]{11}$"),
-//        DISCOVER ("^6(?:011|5[0-9]{2})[0-9]{12}$"),
-//        JCB ("^(?:2131|1800|35\\d{3})\\d{11}$"),
-//        INVALID ("")
-//
-//    }
 
+    fun String.currency(): String {
+        var doubleValue: Double = 0.0
+        if (this != null) doubleValue = this.toDouble()
+
+        return doubleValue.currency()
+    }
+
+    fun Double.currency(): String {
+        return NumberFormat.getCurrencyInstance(Locale("en", "US")).format(this)
+    }
 
 }

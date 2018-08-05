@@ -3,14 +3,14 @@ package com.example.gustavobatista.paygen.activity
 import android.os.Bundle
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.CreditCard
+import com.example.gustavobatista.paygen.util.FieldUtils.isEmpty
+import com.example.gustavobatista.paygen.util.StringUtils
+import com.example.gustavobatista.paygen.util.StringUtils.isValidCreditcard
 import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_add_payment_method.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.yesButton
-import com.example.gustavobatista.paygen.util.StringUtils.isValidCreditcard
-import com.example.gustavobatista.paygen.util.FieldUtils.isEmpty
-import com.example.gustavobatista.paygen.util.StringUtils
 
 
 class AddPaymentMethodActivity : BaseActivity() {

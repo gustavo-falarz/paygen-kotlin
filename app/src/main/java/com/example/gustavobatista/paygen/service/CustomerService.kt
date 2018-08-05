@@ -18,6 +18,9 @@ object CustomerService : Service() {
 
     fun listAllCustomers(): Observable<List<Customer>> = service.listAllCustomers()
 
+    fun checkReception(customerId: String): Observable<Boolean> = service.checkReception(customerId)
+
+
     private val service: CustomerEndpoint
         get() = Service.createService(CustomerEndpoint::class.java)
 

@@ -7,5 +7,5 @@ object LobbyService {
     private val service: LobbyEndpoint
         get() = Service.createService(LobbyEndpoint::class.java)
 
-    fun checkin(userId: String, providerId: String) = service.checkin(userId, providerId)
+    fun checkIn(userId: String, providerId: String) = service.checkIn(userId, providerId)
 }

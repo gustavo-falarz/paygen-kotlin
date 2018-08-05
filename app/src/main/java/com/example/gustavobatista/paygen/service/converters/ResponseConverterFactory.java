@@ -1,7 +1,6 @@
-package com.example.gustavobatista.paygen.util.converters;
+package com.example.gustavobatista.paygen.service.converters;
 
 import com.example.gustavobatista.paygen.entity.Response;
-import com.gfb.watchlist.util.converters.ResponseConverter;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;

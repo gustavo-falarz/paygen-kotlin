@@ -1,24 +1,18 @@
 package com.example.gustavobatista.paygen.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
-import com.example.gustavobatista.paygen.adapter.ProviderAdapter
-import com.example.gustavobatista.paygen.entity.Provider
 import com.example.gustavobatista.paygen.fragment.CheckedInFragment
 import com.example.gustavobatista.paygen.fragment.ProvidersFragment
 import com.example.gustavobatista.paygen.prefs
-import com.example.gustavobatista.paygen.service.ProviderService
-import com.example.gustavobatista.paygen.util.Constants
+import com.example.gustavobatista.paygen.service.CustomerService
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.content_main.*
 import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -33,12 +27,30 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
+    }
 
-        when (prefs.providerId) {
-            "" -> fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
-            else -> fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
+    override fun onStart() {
+        super.onStart()
+        checkReception()
+    }
 
-        }
+    private fun checkReception() {
+        showProgress()
+        CustomerService.checkReception(prefs.userId).applySchedulers().subscribe(
+                {
+                    when (it) {
+                        true -> fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
+                        false -> fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
+                    }
+                },
+                {
+                    closeProgress()
+                    handleException(it)
+                },
+                {
+                   closeProgress()
+                }
+        )
     }
 
 
@@ -66,9 +78,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         when (item.itemId) {
             R.id.nav_payment_methods -> {
                 startActivity<PaymentMethodsActivity>()
-            }
-            R.id.nav_providers -> {
-                startActivity<ProvidersActivity>()
             }
             R.id.nav_logout -> {
                 startActivity<LoginActivity>()

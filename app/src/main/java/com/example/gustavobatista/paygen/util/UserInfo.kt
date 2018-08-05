@@ -35,20 +35,20 @@ class UserInfo(context: Context) {
         }
     }
 
-    var userId: String?
-        get() = prefs.getString(PREF_ID, "")
+    var userId: String
+        get() = prefs.getString(PREF_ID, "5b34409e27039805549d3951")
         set(value) = prefs.edit().putString(PREF_ID, value).apply()
 
-    var userEmail: String?
+    var userEmail: String
         get() = prefs.getString(PREF_EMAIL, "")
         set(value) = prefs.edit().putString(PREF_EMAIL, value).apply()
 
-    var googleSignIn: Boolean?
+    var googleSignIn: Boolean
         get() = prefs.getBoolean(PREF_GOOGLE, false)
-        set(value) = prefs.edit().putBoolean(PREF_GOOGLE, value!!).apply()
+        set(value) = prefs.edit().putBoolean(PREF_GOOGLE, value).apply()
 
-    var providerId: String?
+    var providerId: String
         get() = prefs.getString(PREF_PROVIDER_ID, "")
-        set(value) = prefs.edit().putString(PREF_PROVIDER_ID, value!!).apply()
+        set(value) = prefs.edit().putString(PREF_PROVIDER_ID, value).apply()
 
 }

@@ -24,4 +24,6 @@ interface CustomerEndpoint {
     @POST("customer/listAllCustomers")
     fun listAllCustomers(): Observable<List<Customer>>
 
+    @GET("customer/checkReception/{customerId}")
+    fun checkReception(@Path("customerId") customerId: String): Observable<Boolean>
 }

@@ -11,4 +11,6 @@
     <dimen name="categorie_icon_size">40dp</dimen>
     <dimen name="text_horizontal_spacing">12dp</dimen>
     <dimen name="vertical_spacing">12dp</dimen>
+    <dimen name="text_spacing">6dp</dimen>
+    <dimen name="item_label">18sp</dimen>
 </resources>

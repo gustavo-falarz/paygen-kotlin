@@ -6,8 +6,8 @@ import com.example.gustavobatista.paygen.entity.Provider
 import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.LobbyService
 import com.example.gustavobatista.paygen.util.Constants
-import kotlinx.android.synthetic.main.activity_provider.*
 import com.example.gustavobatista.paygen.util.ImageUtil.load
+import kotlinx.android.synthetic.main.activity_provider.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
 
@@ -30,7 +30,7 @@ class ProviderActivity : BaseActivity() {
     }
 
     private fun onClickCheckin() {
-        LobbyService.checkin("5b34409e27039805549d3951", provider.id).applySchedulers().subscribe(
+        LobbyService.checkIn(prefs.userId, provider.id).applySchedulers().subscribe(
                 {
                     handleResult(it)
                 },

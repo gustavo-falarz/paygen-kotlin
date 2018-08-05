@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.Item
+import com.example.gustavobatista.paygen.util.StringUtils.currency
+import kotlinx.android.synthetic.main.adapter_item.view.*
 
 class ItemAdapter(private val items: List<Item>) :
         RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
@@ -16,12 +18,14 @@ class ItemAdapter(private val items: List<Item>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bindView(items[position])
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindView(item: Item, listener: (Item) -> Unit) = with(itemView) {
-
+        fun bindView(item: Item) = with(itemView) {
+            tvPrice.text = item.price.currency()
+            tvDesc.text = item.description
         }
     }
 

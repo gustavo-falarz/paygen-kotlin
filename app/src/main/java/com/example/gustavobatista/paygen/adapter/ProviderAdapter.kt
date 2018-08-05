@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.Provider
-import kotlinx.android.synthetic.main.adapter_provider.view.*
 import com.example.gustavobatista.paygen.util.ImageUtil.load
+import kotlinx.android.synthetic.main.adapter_provider.view.*
 
 class ProviderAdapter(private val items: List<Provider>, private val listener: (Provider) -> Unit) :
         RecyclerView.Adapter<ProviderAdapter.ViewHolder>() {

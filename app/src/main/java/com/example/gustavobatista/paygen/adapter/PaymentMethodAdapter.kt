@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.CreditCard
+import com.example.gustavobatista.paygen.util.ImageUtil.load
 import com.example.gustavobatista.paygen.util.StringUtils.maskNumber
 import kotlinx.android.synthetic.main.adapter_payment_method.view.*
-import com.example.gustavobatista.paygen.util.ImageUtil.load
 
 class PaymentMethodAdapter(private val items: List<CreditCard>, private val listener: (CreditCard) -> Unit) :
         RecyclerView.Adapter<PaymentMethodAdapter.ViewHolder>() {
