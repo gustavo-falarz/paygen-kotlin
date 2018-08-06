@@ -27,4 +27,9 @@ open class CreditCard : SugarRecord() {
 
     }
 
+    override fun toString(): String {
+        return cardNumber.replaceRange(0, 3, "****")
+    }
+
+
 }

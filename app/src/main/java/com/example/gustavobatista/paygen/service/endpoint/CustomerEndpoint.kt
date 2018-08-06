@@ -2,6 +2,7 @@ package com.example.gustavobatista.paygen.service.endpoint
 
 
 import com.example.gustavobatista.paygen.entity.Customer
+import com.example.gustavobatista.paygen.entity.Provider
 
 import io.reactivex.Observable
 import retrofit2.http.Body
@@ -25,5 +26,5 @@ interface CustomerEndpoint {
     fun listAllCustomers(): Observable<List<Customer>>
 
     @GET("customer/checkReception/{customerId}")
-    fun checkReception(@Path("customerId") customerId: String): Observable<Boolean>
+    fun checkReception(@Path("customerId") customerId: String): Observable<Provider>
 }

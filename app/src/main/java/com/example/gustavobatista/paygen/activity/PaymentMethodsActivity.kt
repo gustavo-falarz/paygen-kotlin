@@ -18,7 +18,7 @@ class PaymentMethodsActivity : BaseActivity() {
         setupToolbar(R.string.title_payment_methods)
         setupActionBar()
         recyclerView.layoutManager = LinearLayoutManager(this)
-        btAdd.setOnClickListener { startActivity<AddPaymentMethodActivity>() }
+        fabAdd.setOnClickListener { startActivity<AddPaymentMethodActivity>() }
     }
 
     override fun onStart() {

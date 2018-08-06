@@ -53,13 +53,11 @@
             android:name=".activity.AddCustomerActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ProvidersActivity"
+            android:name=".activity.PaymentActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ConsumptionActivity"
+            android:name=".activity.ProviderActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.ProviderActivity"
-            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

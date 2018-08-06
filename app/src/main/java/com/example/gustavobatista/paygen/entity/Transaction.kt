@@ -2,17 +2,13 @@ package com.example.gustavobatista.paygen.entity
 
 import java.io.Serializable
 
-open class Transaction:Serializable {
+open class Transaction(var items: List<Item>,
+                       var total: Double,
+                       var paymentMethod: PaymentMethod,
+                       var customerId: String,
+                       var providerId: String,
+                       var id: String? = null) : Serializable {
 
-    var purchaseId: String? = null
-
-    var items: List<Item>? = null
-
-    var total: Double = 0.toDouble()
-
-    var discount: Double = 0.toDouble()
-
-    var paymentMethod: PaymentMethod? = null
 
     enum class PaymentMethod {
         CREDIT_CARD,
@@ -20,7 +16,8 @@ open class Transaction:Serializable {
         CASH
 
     }
-    enum class Status{
+
+    enum class Status {
         PAID,
         PENDING,
         CANCELED

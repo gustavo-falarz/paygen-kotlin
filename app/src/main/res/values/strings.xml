@@ -68,4 +68,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_total_consumo">Total consumido:</string>
+    <string name="message_you_are_in">Você está em:</string>
+    <string name="label_pay">Pagar</string>
+    <string name="label_valor_a_pagar">Valor a pagar:</string>
+    <string name="message_no_card_registered">Nenhuma forma de pagamento cadastrada, cadastre um cartão de credito para continuar.</string>
 </resources>

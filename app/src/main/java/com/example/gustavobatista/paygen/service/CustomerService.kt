@@ -2,6 +2,7 @@ package com.example.gustavobatista.paygen.service
 
 
 import com.example.gustavobatista.paygen.entity.Customer
+import com.example.gustavobatista.paygen.entity.Provider
 import com.example.gustavobatista.paygen.service.endpoint.CustomerEndpoint
 
 import io.reactivex.Observable
@@ -18,7 +19,7 @@ object CustomerService : Service() {
 
     fun listAllCustomers(): Observable<List<Customer>> = service.listAllCustomers()
 
-    fun checkReception(customerId: String): Observable<Boolean> = service.checkReception(customerId)
+    fun checkReception(customerId: String): Observable<Provider> = service.checkReception(customerId)
 
 
     private val service: CustomerEndpoint

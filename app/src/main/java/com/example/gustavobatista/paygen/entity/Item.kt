@@ -1,7 +1,9 @@
 package com.example.gustavobatista.paygen.entity
 
+import java.io.Serializable
 
-open class Item {
+
+open class Item : Serializable {
 
     var id: String? = null
 

@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
+import com.example.gustavobatista.paygen.entity.dataclass.ProviderDataClass
 import com.example.gustavobatista.paygen.fragment.CheckedInFragment
 import com.example.gustavobatista.paygen.fragment.ProvidersFragment
 import com.example.gustavobatista.paygen.prefs
@@ -39,8 +40,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         CustomerService.checkReception(prefs.userId).applySchedulers().subscribe(
                 {
                     when (it) {
-                        true -> fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
-                        false -> fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
+                        null -> {
+                            fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
+                        }
+                        else -> {
+                            ProviderDataClass.provider = it
+                            fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
+                        }
                     }
                 },
                 {
@@ -48,7 +54,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     handleException(it)
                 },
                 {
-                   closeProgress()
+                    closeProgress()
                 }
         )
     }
@@ -59,18 +65,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
         }
     }
 

@@ -50,5 +50,4 @@ class UserInfo(context: Context) {
     var providerId: String
         get() = prefs.getString(PREF_PROVIDER_ID, "")
         set(value) = prefs.edit().putString(PREF_PROVIDER_ID, value).apply()
-
 }
