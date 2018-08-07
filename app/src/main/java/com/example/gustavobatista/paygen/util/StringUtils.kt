@@ -35,7 +35,7 @@ object StringUtils {
     fun getCarrier(cardNumber: String): CreditCard.Carrier {
         return when {
             CreditCard.Carrier.AMEX.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.AMEX
-            CreditCard.Carrier.MASTERCARD.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.MASTERCARD
+            CreditCard.Carrier.MASTER.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.MASTER
             CreditCard.Carrier.VISA.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.VISA
             CreditCard.Carrier.DINERS.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.DINERS
             CreditCard.Carrier.DISCOVER.regex.toRegex().matches(cardNumber) -> CreditCard.Carrier.DISCOVER

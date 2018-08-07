@@ -17,7 +17,6 @@ open class ServiceCielo {
         private val builder = Retrofit.Builder()
                 .baseUrl(BuildConfig.URL_CIELO)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(ResponseConverterFactory(GsonConverterFactory.create()))
                 .addConverterFactory(GsonConverterFactory.create())
 
 

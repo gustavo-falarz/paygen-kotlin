@@ -27,7 +27,7 @@ class PaymentMethodAdapter(private val items: List<CreditCard>, private val list
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(creditCard: CreditCard, listener: (CreditCard) -> Unit) = with(itemView) {
             tvCardNumber.text = creditCard.cardNumber.maskNumber()
-            imCarrier.load(creditCard.carrier.logo){ request -> request.resize(200, 100).centerInside()}
+            imCarrier.load(creditCard.brand.logo){ request -> request.resize(200, 100).centerInside()}
             btDeleteMethod.setOnClickListener{listener(creditCard)}
         }
     }

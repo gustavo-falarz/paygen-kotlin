@@ -82,7 +82,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="top"
-                            android:text="R$ 123.23"
                             android:textColor="@color/white"
                             android:textSize="27sp"
                             android:textStyle="bold" />

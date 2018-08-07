@@ -73,4 +73,5 @@
     <string name="label_pay">Pagar</string>
     <string name="label_valor_a_pagar">Valor a pagar:</string>
     <string name="message_no_card_registered">Nenhuma forma de pagamento cadastrada, cadastre um cartão de credito para continuar.</string>
+    <string name="title_payment">Pagamento</string>
 </resources>

@@ -8,6 +8,6 @@ import retrofit2.http.POST
 interface TransactionEndpoint {
 
     @POST("transaction/addTransaction")
-    fun addTransaction(@Body transaction: Transaction): Observable<Transaction>
+    fun addTransaction(@Body transaction: Transaction): Observable<String>
 
 }

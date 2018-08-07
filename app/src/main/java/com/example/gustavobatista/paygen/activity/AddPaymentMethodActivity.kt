@@ -19,6 +19,7 @@ class AddPaymentMethodActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_payment_method)
         setupToolbar(R.string.title_add_credit_card)
+        setupActionBar()
         btCadastrar.setOnClickListener { onClickCadastrar() }
     }
 
@@ -45,10 +46,9 @@ class AddPaymentMethodActivity : BaseActivity() {
             val creditCard = CreditCard()
             creditCard.cardNumber = etCardNumber.text.toString()
             creditCard.cardHolder = etCardHolder.text.toString()
-            creditCard.expiryMonth = etExpiryMonth.text.toString()
-            creditCard.expiryYear = etExpiryYear.text.toString()
+            creditCard.expirationDate = """${etExpiryMonth.text}/20${etExpiryYear.text}"""
             creditCard.securityCode = etSecurityCode.text.toString()
-            creditCard.carrier = StringUtils.getCarrier(etCardNumber.text.toString())
+            creditCard.brand = StringUtils.getCarrier(etCardNumber.text.toString())
             SugarRecord.save(creditCard)
         }
         alert(getString(R.string.message_payment_method_added),
@@ -77,8 +77,8 @@ class AddPaymentMethodActivity : BaseActivity() {
         return etSecurityCode.text.toString().length < 3
     }
 
-    private fun invalidCarrier():Boolean{
-        return StringUtils.getCarrier(etCardNumber.text.toString())== CreditCard.Carrier.INVALID
+    private fun invalidCarrier(): Boolean {
+        return StringUtils.getCarrier(etCardNumber.text.toString()) == CreditCard.Carrier.INVALID
     }
 }
 

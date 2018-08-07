@@ -48,6 +48,6 @@ class UserInfo(context: Context) {
         set(value) = prefs.edit().putBoolean(PREF_GOOGLE, value).apply()
 
     var providerId: String
-        get() = prefs.getString(PREF_PROVIDER_ID, "")
+        get() = prefs.getString(PREF_PROVIDER_ID, "5b5fcc2314e01300047c9ec9")
         set(value) = prefs.edit().putString(PREF_PROVIDER_ID, value).apply()
 }
