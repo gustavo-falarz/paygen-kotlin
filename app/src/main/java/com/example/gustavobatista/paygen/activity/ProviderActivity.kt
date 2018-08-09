@@ -30,12 +30,17 @@ class ProviderActivity : BaseActivity() {
     }
 
     private fun onClickCheckin() {
+        showProgress()
         LobbyService.checkIn(prefs.userId, provider.id).applySchedulers().subscribe(
                 {
+                    closeProgress()
                     handleResult(it)
                 },
                 {
                     handleException(it)
+                },
+                {
+                    closeProgress()
                 }
         )
     }

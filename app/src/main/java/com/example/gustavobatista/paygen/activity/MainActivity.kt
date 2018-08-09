@@ -39,8 +39,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         showProgress()
         CustomerService.checkReception(prefs.userId).applySchedulers().subscribe(
                 {
-                    when (it) {
-                        null -> {
+                    when (it.name.isEmpty()) {
+                        true -> {
                             fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
                         }
                         else -> {

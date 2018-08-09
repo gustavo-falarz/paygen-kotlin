@@ -1,5 +1,6 @@
 package com.example.gustavobatista.paygen.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
@@ -121,6 +122,8 @@ class PaymentActivity : BaseActivity() {
         alert(transaction, getString(R.string.title_success)) {
             positiveButton(R.string.ok) {
                 startActivity<MainActivity>()
+                val intent = Intent(getActivity(), MainActivity::class.java)
+                startActivity(intent)
                 finish()
             }
         }.show()

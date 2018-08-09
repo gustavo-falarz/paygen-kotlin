@@ -35,7 +35,7 @@ open class BaseActivity : AppCompatActivity() {
     }
 
 
-    fun setupToolbar(title: Int){
+    fun setupToolbar(title: Int) {
         setupToolbar(getString(title))
     }
 
@@ -110,4 +110,6 @@ open class BaseActivity : AppCompatActivity() {
         fragmentTransaction.func()
         fragmentTransaction.commit()
     }
+
+    fun getActivity() = this
 }
