@@ -47,7 +47,7 @@ class ProviderActivity : BaseActivity() {
 
     private fun handleResult(message: String) {
         prefs.providerId = provider.id
-        alert(getString(R.string.title_success), message) {
+        alert(message, getString(R.string.title_success)) {
             positiveButton(R.string.yes) {
                 startActivity<MainActivity>()
             }

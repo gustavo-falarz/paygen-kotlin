@@ -16,7 +16,7 @@
     <string name="label_email">email</string>
     <string name="label_cadastrar">Cadastrar</string>
     <string name="ok">Ok</string>
-    <string name="error_title">Encontramos alguns problemas</string>
+    <string name="error_title">Problemas</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

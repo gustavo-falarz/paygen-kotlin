@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.view.Menu
 import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.dataclass.ProviderDataClass

@@ -28,7 +28,6 @@ class ProviderAdapter(private val items: List<Provider>, private val listener: (
             tvProviderName.text = provider.name
             imBannerProvider.load(provider.info.banner) { request -> request.fit() }
             parentView.setOnClickListener{listener(provider)}
-
         }
     }
 
