@@ -80,6 +80,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 startActivity(intentFor<SplashActivity>().clearTask().clearTop())
                 finish()
             }
+            R.id.nav_settings -> {
+                startActivity<SettingsActivity>()
+            }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return false

@@ -85,4 +85,6 @@
     <string name="label_save">Salvar</string>
     <string name="hint_new_password">Nova senha</string>
     <string name="disclaimer_status_pending">Seu cadastro está pendente de ativação, para prosseguir atualize sua senha</string>
+    <string name="title_settings">Configurações</string>
+    <string name="label_settings">Configurações</string>
 </resources>

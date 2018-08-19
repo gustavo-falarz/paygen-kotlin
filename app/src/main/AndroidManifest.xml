@@ -62,8 +62,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.ChangePasswordActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_change_password"/>
+            android:label="@string/title_change_password"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/title_settings"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
