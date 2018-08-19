@@ -17,7 +17,7 @@ import retrofit2.http.Path
 interface CustomerEndpoint {
 
     @POST("customer/addCustomer")
-    fun addUser(@Body customer: Customer): Observable<Customer>
+    fun addUser(@Body customer: Customer): Observable<String>
 
     @GET("customer/findCustomer/{cpf}")
     fun findCustomer(@Path("cpf") cpf: String): Observable<Customer>

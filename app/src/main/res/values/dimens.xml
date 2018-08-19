@@ -13,4 +13,5 @@
     <dimen name="vertical_spacing">12dp</dimen>
     <dimen name="text_spacing">6dp</dimen>
     <dimen name="item_label">18sp</dimen>
+    <dimen name="button_google_height">60dp</dimen>
 </resources>

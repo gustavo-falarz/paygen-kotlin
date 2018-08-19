@@ -13,13 +13,13 @@ import io.reactivex.Observable
 
 object CustomerService : Service() {
 
-    fun addUser(customer: Customer): Observable<Customer> = service.addUser(customer)
+    fun addUser(customer: Customer) = service.addUser(customer)
 
-    fun findCustomer(cpf: String): Observable<Customer> = service.findCustomer(cpf)
+    fun findCustomer(cpf: String) = service.findCustomer(cpf)
 
-    fun listAllCustomers(): Observable<List<Customer>> = service.listAllCustomers()
+    fun listAllCustomers() = service.listAllCustomers()
 
-    fun checkReception(customerId: String): Observable<Provider> = service.checkReception(customerId)
+    fun checkReception(customerId: String) = service.checkReception(customerId)
 
 
     private val service: CustomerEndpoint

@@ -15,8 +15,12 @@
       },
       "oauth_client": [
         {
-          "client_id": "776697389842-a1nnv5enkk2t07brkqooqts83ml1ercv.apps.googleusercontent.com",
-          "client_type": 3
+          "client_id": "776697389842-ovb7qr3bqbhgo2ft30d83t3og9aoue6l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gustavobatista.paygen",
+            "certificate_hash": "fa98fb3cf63c6b9cc75c0472e5e2d334737e9ee9"
+          }
         },
         {
           "client_id": "776697389842-a1nnv5enkk2t07brkqooqts83ml1ercv.apps.googleusercontent.com",
@@ -33,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776697389842-a1nnv5enkk2t07brkqooqts83ml1ercv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

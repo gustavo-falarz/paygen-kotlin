@@ -6,7 +6,6 @@ package com.example.gustavobatista.paygen.entity
  */
 
 class Provider(val type: Type,
-               val status: Status,
                val lobby: Lobby,
                val location: Point,
                val sales: List<Transaction>,
@@ -14,11 +13,6 @@ class Provider(val type: Type,
                val employees: List<User>,
                val info: ProviderInfo) : User(){
 
-
-    enum class Status {
-        PENDING,
-        ACTIVE
-    }
 
     enum class Type {
         RESTAURANT,

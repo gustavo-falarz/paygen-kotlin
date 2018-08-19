@@ -22,7 +22,7 @@ class AddCustomerActivity : BaseActivity() {
     }
 
     private fun checkFields() {
-        if (etEmail.text.isNullOrEmpty()) {
+        if (etEmail.text.isNullOrEmpty() || etEmail.text.isNullOrEmpty()) {
             showWarning(R.string.warning_empty_fields)
             return
         }
@@ -31,33 +31,25 @@ class AddCustomerActivity : BaseActivity() {
 
     private fun saveCustomer() {
         val customer = Customer()
+        customer.name = etName.text.toString()
         customer.email = etEmail.text.toString()
-
-        CustomerService.addUser(customer).applySchedulers()
-                .subscribe(object : Observer<Customer> {
-                    override fun onSubscribe(@NonNull d: Disposable) {
-                        showProgress()
-                    }
-
-                    override fun onNext(@NonNull customer: Customer) {
-                        closeProgress()
-                        handleResult()
-                    }
-
-                    override fun onError(@NonNull e: Throwable) {
-                        handleException(e)
-                        closeProgress()
-                    }
-
-                    override fun onComplete() {
-                        closeProgress()
-                    }
+        showProgress()
+        CustomerService.addUser(customer).applySchedulers().subscribe(
+                {
+                    handleResult(it)
+                },
+                {
+                    closeProgress()
+                    handleException(it)
+                },
+                {
+                    closeProgress()
                 })
     }
 
-    private fun handleResult() {
-        alert(getString(R.string.message_account_activation), getString(R.string.title_success)) {
+    private fun handleResult(message: String) {
+        alert(message, getString(R.string.title_success)) {
             yesButton { finish() }
-        }
+        }.show()
     }
 }

@@ -18,6 +18,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.yesButton
+import java.net.SocketTimeoutException
 
 
 /**
@@ -69,10 +70,13 @@ open class BaseActivity : AppCompatActivity() {
     fun handleException(exception: Throwable) {
         exception.printStackTrace()
         Crashlytics.logException(exception)
-        exception.message?.let {
-            alert(it, getString(R.string.error_title))
-            { yesButton { } }.show()
+        var message = exception.message
+        if (exception is SocketTimeoutException) {
+            message = "O tempo limite da conexão se esgotou"
         }
+        alert(message!!, getString(R.string.error_title))
+        { yesButton { } }.show()
+
     }
 
     fun showWarning(message: Int) {

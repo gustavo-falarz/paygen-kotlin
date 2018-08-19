@@ -11,8 +11,12 @@ import com.example.gustavobatista.paygen.fragment.CheckedInFragment
 import com.example.gustavobatista.paygen.fragment.ProvidersFragment
 import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.CustomerService
+import com.example.gustavobatista.paygen.util.UserInfo
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.clearTop
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -58,7 +62,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         )
     }
 
-
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -73,7 +76,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 startActivity<PaymentMethodsActivity>()
             }
             R.id.nav_logout -> {
-                startActivity<LoginActivity>()
+                UserInfo.clearData(this)
+                startActivity(intentFor<SplashActivity>().clearTask().clearTop())
                 finish()
             }
         }

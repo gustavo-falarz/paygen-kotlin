@@ -17,4 +17,12 @@ open class User : Serializable {
     lateinit var password: String
 
     lateinit var phone: String
+
+    var status: User.Status? = null
+
+    enum class Status {
+        ACTIVE,
+        PENDING
+    }
+
 }
