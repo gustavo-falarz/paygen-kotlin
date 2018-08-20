@@ -2,10 +2,7 @@ package com.example.gustavobatista.paygen.service
 
 
 import com.example.gustavobatista.paygen.entity.Customer
-import com.example.gustavobatista.paygen.entity.Provider
 import com.example.gustavobatista.paygen.service.endpoint.CustomerEndpoint
-
-import io.reactivex.Observable
 
 /**
  * Created by Gustavo on 10/24/2017.

@@ -1,6 +1,5 @@
 package com.example.gustavobatista.paygen.activity
 
-import android.content.Intent
 import android.os.Bundle
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.prefs

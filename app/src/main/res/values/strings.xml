@@ -87,4 +87,9 @@
     <string name="disclaimer_status_pending">Seu cadastro está pendente de ativação, para prosseguir atualize sua senha</string>
     <string name="title_settings">Configurações</string>
     <string name="label_settings">Configurações</string>
+
+    <string name="restaurant">Restaurante</string>
+    <string name="hamburguer">Hamburgueria</string>
+    <string name="pizza">Pizzaria</string>
+
 </resources>

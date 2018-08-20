@@ -18,6 +18,7 @@ import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.ConsumptionService
 import com.example.gustavobatista.paygen.util.Constants
 import com.example.gustavobatista.paygen.util.SaleUtils
+import com.example.gustavobatista.paygen.util.ImageUtil.load
 import com.example.gustavobatista.paygen.util.StringUtils.currency
 import kotlinx.android.synthetic.main.fragment_checked_in.*
 
@@ -31,6 +32,7 @@ class CheckedInFragment : BaseFragment() {
     }
 
     private fun initViews() {
+        imLogo.load(ProviderDataClass.provider!!.info.logo) { request -> request.resize(200, 200).centerInside() }
         tvProviderName.text = ProviderDataClass.provider!!.name
         swipeRefresh.setOnRefreshListener { getConsumption() }
         fabPay.setOnClickListener { onClickPay() }

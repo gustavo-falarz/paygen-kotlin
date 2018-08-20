@@ -12,9 +12,12 @@ import com.squareup.picasso.RequestCreator
 object ImageUtil {
 
     fun ImageView.load(path: String, request: (RequestCreator) -> RequestCreator) {
-        if(!path.isNullOrEmpty()){
-        request(context.picasso.load(path)).placeholder(R.drawable.ic_image_grey).into(this)
-    }}
+        if (!path.isNullOrEmpty()) {
+            request(context.picasso.load(path)).error(R.drawable.ic_image_grey).placeholder(R.drawable.ic_image_grey).into(this)
+        } else {
+            request(context.picasso.load(R.drawable.ic_image_grey)).error(R.drawable.ic_image_grey).placeholder(R.drawable.ic_image_grey).into(this)
+        }
+    }
 
     private val Context.picasso: Picasso
         get() = Picasso.with(this)
