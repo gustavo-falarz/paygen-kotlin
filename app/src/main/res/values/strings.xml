@@ -91,5 +91,7 @@
     <string name="restaurant">Restaurante</string>
     <string name="hamburguer">Hamburgueria</string>
     <string name="pizza">Pizzaria</string>
+    <string name="title_address">Endereço</string>
+    <string name="label_delivery">Delivery</string>
 
 </resources>

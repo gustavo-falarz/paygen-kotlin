@@ -9,7 +9,14 @@ open class Transaction(var items: List<Item>,
                        var id: String? = null) : Serializable {
 
     var payment: Payment? = null
+    var date: String = ""
+    var type: Transaction.Type = Type.LOCAL
+    var discount: Double = 0.0
 
+    enum class Type {
+        DELIVERY,
+        LOCAL
+    }
 
     enum class Status {
         PAID,

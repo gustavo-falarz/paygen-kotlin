@@ -44,6 +44,7 @@ class CheckedInFragment : BaseFragment() {
         val transaction = Transaction(items,
                 SaleUtils.getTotalCost(items),
                 prefs.userId, prefs.providerId)
+        transaction.discount = SaleUtils.getTotalDiscount(items)
 
         val intent = Intent(activity, PaymentActivity::class.java)
         intent.putExtra(Constants.TRANSITION_KEY_TRANSACTION, transaction)

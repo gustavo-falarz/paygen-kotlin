@@ -2,6 +2,7 @@ package com.example.gustavobatista.paygen.activity
 
 import android.os.Bundle
 import com.example.gustavobatista.paygen.R
+import com.example.gustavobatista.paygen.entity.OpenHours
 import com.example.gustavobatista.paygen.entity.Provider
 import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.LobbyService
@@ -23,7 +24,11 @@ class ProviderActivity : BaseActivity() {
 
         setupActionBar()
         setupToolbar(provider.name)
+
         imBannerProvider.load(provider.info.banner) { request -> request.fit() }
+        tvOpenHours.text = processOpenHours(provider.info.openHours)
+        tvAbout.text = provider.info.about
+        tvAddress.text = provider.info.address
 
         btCheckin.setOnClickListener { onClickCheckin() }
 
@@ -52,5 +57,13 @@ class ProviderActivity : BaseActivity() {
                 startActivity<MainActivity>()
             }
         }.show()
+    }
+
+    private fun processOpenHours(openHours: List<OpenHours>): String {
+        var result = ""
+        for (openHour in openHours) {
+            result += openHour
+        }
+        return result
     }
 }

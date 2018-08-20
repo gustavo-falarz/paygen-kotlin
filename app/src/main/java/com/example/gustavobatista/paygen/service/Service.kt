@@ -2,10 +2,12 @@ package com.example.gustavobatista.paygen.service
 
 import com.example.gustavobatista.paygen.BuildConfig
 import com.example.gustavobatista.paygen.service.converters.ResponseConverterFactory
+import okhttp3.OkHttpClient
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 
 /**
@@ -16,6 +18,7 @@ open class Service {
     companion object {
         private val builder = Retrofit.Builder()
                 .baseUrl(BuildConfig.URL_BASE)
+                .client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(ResponseConverterFactory(GsonConverterFactory.create()))
                 .addConverterFactory(GsonConverterFactory.create())
@@ -26,6 +29,12 @@ open class Service {
                     .build()
             return retrofit.create(serviceClass)
         }
+
+        private val okHttpClient: OkHttpClient
+            get() = OkHttpClient.Builder()
+                    .readTimeout(60, TimeUnit.SECONDS)
+                    .connectTimeout(60, TimeUnit.SECONDS)
+                    .build()
     }
 
 }

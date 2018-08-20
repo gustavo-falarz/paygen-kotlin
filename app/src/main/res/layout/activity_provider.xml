@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey_200"
     android:orientation="vertical"
     tools:context=".activity.ProviderActivity">
 
@@ -16,8 +17,24 @@
         android:id="@+id/btCheckin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
         android:backgroundTint="@color/green_400"
+        android:drawableLeft="@drawable/ic_checkin"
+        android:paddingRight="25dp"
         android:text="@string/checkIn"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/btDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:backgroundTint="@color/red_400"
+        android:drawableLeft="@drawable/ic_delivery_white"
+        android:paddingRight="25dp"
+        android:text="@string/label_delivery"
         android:textColor="@color/white" />
 
     <LinearLayout
@@ -29,13 +46,13 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp"
             app:cardElevation="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -47,7 +64,7 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.20"
+                        android:layout_weight="0.30"
                         tools:ignore="RtlHardcoded">
 
                         <TextView
@@ -63,7 +80,7 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.80"
+                        android:layout_weight="0.70"
                         android:gravity="left"
                         tools:ignore="RtlHardcoded">
 
@@ -71,8 +88,7 @@
                             android:id="@+id/tvAbout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
-                            android:text="Restaurantre de de comida Arabe." />
+                            android:gravity="left" />
 
                     </LinearLayout>
 
@@ -82,13 +98,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/vertical_spacing"
                     android:orientation="horizontal">
 
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.20"
+                        android:layout_weight="0.30"
                         tools:ignore="RtlHardcoded">
 
                         <TextView
@@ -105,7 +122,7 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.80"
+                        android:layout_weight="0.70"
                         android:gravity="left"
                         tools:ignore="RtlHardcoded">
 
@@ -113,8 +130,49 @@
                             android:id="@+id/tvOpenHours"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="left"
-                            android:text="Dom 9:00 - 22:00\nSeg 9:00 - 22:00\nTer 9:00 - 22:00\nQua 9:00 - 22:00\nQui 9:00 - 22:00" />
+                            android:gravity="left" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/vertical_spacing"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.30"
+                        tools:ignore="RtlHardcoded">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingRight="@dimen/text_horizontal_spacing"
+                            android:text="@string/title_address"
+                            android:textStyle="bold"
+                            tools:ignore="RtlSymmetry" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.70"
+                        android:gravity="left"
+                        tools:ignore="RtlHardcoded">
+
+                        <TextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left" />
 
                     </LinearLayout>
 

@@ -14,4 +14,5 @@ open class Item : Serializable {
     var price: Double = 0.toDouble()
 
     var discount: Double = 0.toDouble()
+
 }
