@@ -68,6 +68,7 @@
             android:name=".activity.SettingsActivity"
             android:label="@string/title_settings"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.MenuActivity"></activity>
     </application>
 
 </manifest>

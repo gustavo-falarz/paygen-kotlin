@@ -10,4 +10,5 @@ object ConsumptionService {
 
     fun getConsumption(customerId: String, providerId: String): Observable<Consumption> =
             service.getConsumption(customerId, providerId)
+
 }

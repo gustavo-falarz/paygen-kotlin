@@ -98,7 +98,6 @@ class PaymentActivity : BaseActivity() {
 
     private fun saveTransaction() {
         showProgress()
-
         TransactionService.addTransaction(transaction).applySchedulers().subscribe(
                 {
                     handleTransaction(it)

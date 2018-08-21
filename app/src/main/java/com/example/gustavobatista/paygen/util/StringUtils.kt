@@ -52,7 +52,7 @@ object StringUtils {
     }
 
     fun Double.currency(): String {
-        return NumberFormat.getCurrencyInstance(Locale("en", "US")).format(this)
+        return NumberFormat.getCurrencyInstance(Locale("pt", "BR")).format(this)
     }
 
 }

@@ -93,5 +93,7 @@
     <string name="pizza">Pizzaria</string>
     <string name="title_address">Endereço</string>
     <string name="label_delivery">Delivery</string>
+    <string name="title_add_items">Itens</string>
+    <string name="error_empty_query">Informe ao menos um parametro de busca</string>
 
 </resources>

@@ -14,4 +14,5 @@ interface ConsumptionEndpoint {
             @Path("providerId") providerId: String
     ): Observable<Consumption>
 
+
 }
