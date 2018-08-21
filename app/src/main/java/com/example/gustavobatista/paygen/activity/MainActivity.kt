@@ -47,6 +47,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                             fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
                         }
                         else -> {
+                            prefs.providerId = it.id
                             ProviderDataClass.provider = it
                             fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
                         }
