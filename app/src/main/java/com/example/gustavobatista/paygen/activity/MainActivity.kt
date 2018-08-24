@@ -84,6 +84,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.nav_settings -> {
                 startActivity<SettingsActivity>()
             }
+            R.id.nav_purchases -> {
+                startActivity<PurchasesActivity>()
+            }
+
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return false

@@ -68,7 +68,16 @@
             android:name=".activity.SettingsActivity"
             android:label="@string/title_settings"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.MenuActivity"></activity>
+        <activity android:name=".activity.MenuActivity" />
+
+        <activity
+            android:label="@string/title_purchases"
+            android:name=".activity.PurchasesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PurchaseDetailsActivity"
+            android:label="@string/title_purchase_details"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

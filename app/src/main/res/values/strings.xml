@@ -66,8 +66,7 @@
     <string name="title_open_hours">Horários</string>
     <string name="checkIn">Check-in</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="label_total_consumo">Total consumido:</string>
     <string name="message_you_are_in">Você está em:</string>
     <string name="label_pay">Pagar</string>
@@ -95,5 +94,8 @@
     <string name="label_delivery">Delivery</string>
     <string name="title_add_items">Itens</string>
     <string name="error_empty_query">Informe ao menos um parametro de busca</string>
+    <string name="title_purchases">Suas compras</string>
+    <string name="title_purchase_details">Detalhes da compra</string>
+    <string name="label_purchases">Minhas compras</string>
 
 </resources>

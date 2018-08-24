@@ -9,4 +9,7 @@ object TransactionService {
         get() = Service.createService(TransactionEndpoint::class.java)
 
     fun addTransaction(transaction: Transaction) = service.addTransaction(transaction)
+
+    fun getTransactions(userId: String) = service.getTransactions(userId)
+
 }

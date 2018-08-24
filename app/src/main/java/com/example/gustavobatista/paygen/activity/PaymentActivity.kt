@@ -14,8 +14,7 @@ import com.example.gustavobatista.paygen.util.SaleUtils.getTotalInCents
 import com.example.gustavobatista.paygen.util.StringUtils.currency
 import com.orm.SugarRecord
 import kotlinx.android.synthetic.main.activity_payment.*
-import org.jetbrains.anko.alert
-import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.*
 
 
 @Suppress("UNCHECKED_CAST")
@@ -31,6 +30,7 @@ class PaymentActivity : BaseActivity() {
         setupToolbar(R.string.title_payment)
         setupActionBar()
         btPay.setOnClickListener { onClickPay() }
+        btAddCard.setOnClickListener { startActivity<AddPaymentMethodActivity>() }
     }
 
     override fun onStart() {
@@ -120,9 +120,7 @@ class PaymentActivity : BaseActivity() {
     private fun handleTransaction(transaction: String) {
         alert(transaction, getString(R.string.title_success)) {
             positiveButton(R.string.ok) {
-                startActivity<MainActivity>()
-                val intent = Intent(getActivity(), MainActivity::class.java)
-                startActivity(intent)
+                startActivity(intentFor<MainActivity>().clearTask().clearTop())
                 finish()
             }
         }.show()

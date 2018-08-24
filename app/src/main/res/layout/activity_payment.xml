@@ -48,7 +48,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:gravity="left|center_vertical"
                     android:orientation="horizontal"
                     android:padding="22dp">
 
@@ -60,9 +60,16 @@
 
                     <Spinner
                         android:id="@+id/spCreditCards"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="6dp" />
+
+                    <ImageView
+                        android:layout_marginLeft="6dp"
+                        android:id="@+id/btAddCard"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_add_card" />
 
                 </LinearLayout>
             </LinearLayout>
