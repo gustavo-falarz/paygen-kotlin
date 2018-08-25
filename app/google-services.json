@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "776697389842-h5gv516263oul0nv23voutvche0hd8sa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gustavobatista.paygen",
+            "certificate_hash": "ed37f16176116841a37343e530f769006981ee7b"
+          }
+        },
+        {
           "client_id": "776697389842-a1nnv5enkk2t07brkqooqts83ml1ercv.apps.googleusercontent.com",
           "client_type": 3
         }

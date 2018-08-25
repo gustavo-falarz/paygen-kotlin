@@ -15,6 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDo0S-LCOvTf-nSevPB8hyNtchItcDQiKI" />
+
         <meta-data
             android:name="DATABASE"
             android:value="sugar_example.db" />
@@ -77,6 +82,10 @@
         <activity
             android:name=".activity.PurchaseDetailsActivity"
             android:label="@string/title_purchase_details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddItemsActivity"
+            android:label="@string/title_menu"
             android:screenOrientation="portrait" />
     </application>
 

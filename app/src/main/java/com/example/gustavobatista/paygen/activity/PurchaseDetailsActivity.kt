@@ -5,8 +5,8 @@ import android.support.v7.widget.LinearLayoutManager
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.adapter.ItemAdapter
 import com.example.gustavobatista.paygen.entity.Transaction
-import kotlinx.android.synthetic.main.activity_purchase_details.*
 import com.example.gustavobatista.paygen.util.StringUtils.currency
+import kotlinx.android.synthetic.main.activity_purchase_details.*
 
 
 class PurchaseDetailsActivity : BaseActivity() {

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.gustavobatista.paygen.R
+import com.example.gustavobatista.paygen.activity.AddItemsActivity
 import com.example.gustavobatista.paygen.activity.PaymentActivity
 import com.example.gustavobatista.paygen.adapter.ItemAdapter
 import com.example.gustavobatista.paygen.entity.Consumption
@@ -17,10 +18,11 @@ import com.example.gustavobatista.paygen.entity.dataclass.ProviderDataClass
 import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.ConsumptionService
 import com.example.gustavobatista.paygen.util.Constants
-import com.example.gustavobatista.paygen.util.SaleUtils
 import com.example.gustavobatista.paygen.util.ImageUtil.load
+import com.example.gustavobatista.paygen.util.SaleUtils
 import com.example.gustavobatista.paygen.util.StringUtils.currency
 import kotlinx.android.synthetic.main.fragment_checked_in.*
+import org.jetbrains.anko.startActivity
 
 class CheckedInFragment : BaseFragment() {
     private lateinit var items: List<Item>
@@ -36,11 +38,17 @@ class CheckedInFragment : BaseFragment() {
         tvProviderName.text = ProviderDataClass.provider!!.name
         swipeRefresh.setOnRefreshListener { getConsumption() }
         fabPay.setOnClickListener { onClickPay() }
+        fabAddItem.setOnClickListener { addItem() }
         recyclerView.layoutManager = LinearLayoutManager(activity)
     }
 
-    private fun onClickPay() {
+    private fun addItem() {
+        fabMenu.hideMenu(true)
+        startActivity<AddItemsActivity>()
+    }
 
+    private fun onClickPay() {
+        fabMenu.hideMenu(true)
         val transaction = Transaction(items,
                 SaleUtils.getTotalCost(items),
                 prefs.userId, prefs.providerId)

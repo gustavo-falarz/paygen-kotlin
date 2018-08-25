@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.Transaction
-import kotlinx.android.synthetic.main.adapter_transaction.view.*
 import com.example.gustavobatista.paygen.util.StringUtils.currency
+import kotlinx.android.synthetic.main.adapter_transaction.view.*
 
 
 class TransactionAdapter(private val transactions: List<Transaction>, val listener: (Transaction) -> Unit) :

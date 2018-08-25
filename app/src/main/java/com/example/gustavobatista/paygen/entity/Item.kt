@@ -5,14 +5,18 @@ import java.io.Serializable
 
 open class Item : Serializable {
 
-    var id: String? = null
+    var id: String = ""
 
-    var description: String? = null
+    var name: String = ""
+
+    var description: String = ""
 
     var value: Double = 0.toDouble()
 
     var price: Double = 0.toDouble()
 
     var discount: Double = 0.toDouble()
+
+    var picture: String? = ""
 
 }

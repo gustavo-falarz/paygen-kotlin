@@ -8,11 +8,18 @@ import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.LobbyService
 import com.example.gustavobatista.paygen.util.Constants
 import com.example.gustavobatista.paygen.util.ImageUtil.load
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapFragment
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_provider.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.startActivity
 
-class ProviderActivity : BaseActivity() {
+class ProviderActivity : BaseActivity(), OnMapReadyCallback {
+    lateinit var mMap: GoogleMap
 
     lateinit var provider: Provider
 
@@ -29,7 +36,9 @@ class ProviderActivity : BaseActivity() {
         tvOpenHours.text = processOpenHours(provider.info.openHours)
         tvAbout.text = provider.info.about
         tvAddress.text = provider.info.address
+        val mapFragment = fragmentManager.findFragmentById(R.id.map) as MapFragment
 
+        mapFragment.getMapAsync(this)
         btCheckin.setOnClickListener { onClickCheckin() }
 
     }
@@ -65,5 +74,16 @@ class ProviderActivity : BaseActivity() {
             result += openHour
         }
         return result
+    }
+
+    override fun onMapReady(googleMap: GoogleMap?) {
+        mMap = googleMap!!
+        val position = LatLng(provider.location.x, provider.location.y)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 15.0F))
+
+        googleMap.addMarker(MarkerOptions()
+                .position(position)
+                .title(provider.name)
+                .snippet(provider.info.address))
     }
 }

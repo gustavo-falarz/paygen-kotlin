@@ -4,9 +4,9 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.gustavobatista.paygen.util.StringUtils.currency
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.Item
+import com.example.gustavobatista.paygen.util.StringUtils.currency
 import kotlinx.android.synthetic.main.adapter_add_item.view.*
 
 class AddItemAdapter(private val items: List<Item>, private val listener: (Item) -> Unit) :

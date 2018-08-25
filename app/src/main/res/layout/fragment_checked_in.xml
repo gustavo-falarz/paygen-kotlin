@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +29,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:background="@color/white"
-                    android:src="@drawable/ic_image_grey" />
+                    android:src="@drawable/image_place_holder" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -105,13 +106,47 @@
 
         </LinearLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabPay"
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fabMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
-            app:srcCompat="@drawable/ic_payment_white" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            fab:menu_animationDelayPerItem="0"
+            fab:menu_colorNormal="@color/colorAccent"
+            fab:menu_colorPressed="@color/teal_600"
+            fab:menu_colorRipple="@color/black_transparent_40"
+            fab:menu_labels_hideAnimation="@anim/jump_to_down"
+            fab:menu_labels_showAnimation="@anim/jump_from_down"
+            fab:menu_shadowColor="@color/grey_300">
+
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fabPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_payment_white"
+                android:padding="8dp"
+                fab:fab_label="@string/action_pay"
+                fab:fab_colorNormal="@color/red_400"
+                fab:fab_colorPressed="@color/red_800"
+                fab:fab_colorRipple="@color/black_transparent_40" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:id="@+id/fabAddItem"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fab_add"
+                fab:fab_label="@string/action_add_items"
+                fab:fab_colorNormal="@color/green_400"
+                fab:fab_colorPressed="@color/green_800"
+                fab:fab_colorRipple="@color/black_transparent_40" />
+
+
+        </com.github.clans.fab.FloatingActionMenu>
+
 
     </FrameLayout>
 

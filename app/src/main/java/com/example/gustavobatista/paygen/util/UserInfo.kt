@@ -3,12 +3,11 @@ package com.example.gustavobatista.paygen.util
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.gustavobatista.paygen.PaygenApplication.Companion.prefs
-import com.example.gustavobatista.paygen.entity.User
-import com.example.gustavobatista.paygen.util.Constants.PREF_TOKEN
 import com.example.gustavobatista.paygen.util.Constants.PREF_GOOGLE
 import com.example.gustavobatista.paygen.util.Constants.PREF_ID
 import com.example.gustavobatista.paygen.util.Constants.PREF_KEY
 import com.example.gustavobatista.paygen.util.Constants.PREF_PROVIDER_ID
+import com.example.gustavobatista.paygen.util.Constants.PREF_TOKEN
 import com.firebase.ui.auth.AuthUI
 
 /**

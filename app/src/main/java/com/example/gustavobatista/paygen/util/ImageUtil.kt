@@ -11,11 +11,11 @@ import com.squareup.picasso.RequestCreator
  */
 object ImageUtil {
 
-    fun ImageView.load(path: String, request: (RequestCreator) -> RequestCreator) {
+    fun ImageView.load(path: String?, request: (RequestCreator) -> RequestCreator) {
         if (!path.isNullOrEmpty()) {
-            request(context.picasso.load(path)).error(R.drawable.ic_image_grey).placeholder(R.drawable.ic_image_grey).into(this)
+            request(context.picasso.load(path)).error(R.drawable.image_place_holder).placeholder(R.drawable.image_place_holder).into(this)
         } else {
-            request(context.picasso.load(R.drawable.ic_image_grey)).error(R.drawable.ic_image_grey).placeholder(R.drawable.ic_image_grey).into(this)
+            request(context.picasso.load(R.drawable.image_place_holder)).error(R.drawable.image_place_holder).placeholder(R.drawable.image_place_holder).into(this)
         }
     }
 

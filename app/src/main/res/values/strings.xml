@@ -97,5 +97,8 @@
     <string name="title_purchases">Suas compras</string>
     <string name="title_purchase_details">Detalhes da compra</string>
     <string name="label_purchases">Minhas compras</string>
+    <string name="action_pay">Pagar</string>
+    <string name="title_menu">Cardapio</string>
+    <string name="action_add_items">Adiconar itens à comanda</string>
 
 </resources>
