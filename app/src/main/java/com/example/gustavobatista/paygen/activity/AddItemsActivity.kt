@@ -54,7 +54,7 @@ class AddItemsActivity : BaseActivity() {
             showWarning(getString(R.string.error_empty_query))
             return
         }
-        ItemService.findItems(prefs.providerId, query).applySchedulers().subscribe(
+        ItemService.findProducts(prefs.providerId, query).applySchedulers().subscribe(
                 {
                     createAdapter(it)
                 },

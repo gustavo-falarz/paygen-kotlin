@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.view.Menu
 import android.view.MenuItem
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.dataclass.ProviderDataClass
@@ -21,8 +20,6 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
-
-    var checkedIn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,17 +46,14 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 {
                     when (it.name.isEmpty()) {
                         true -> {
-                            checkedIn = false
                             fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
                         }
                         else -> {
-                            checkedIn = true
                             prefs.providerId = it.id
                             ProviderDataClass.provider = it
                             fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
                         }
                     }
-                    invalidateOptionsMenu()
                 },
                 {
                     closeProgress()
@@ -69,25 +63,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     closeProgress()
                 }
         )
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        return if (checkedIn) {
-            menuInflater.inflate(R.menu.main, menu)
-            true
-        } else {
-            false
-        }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.action_settings -> {
-
-                return true
-            }
-            else -> return super.onOptionsItemSelected(item)
-        }
     }
 
     override fun onBackPressed() {

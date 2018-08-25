@@ -9,5 +9,5 @@ object ItemService : Service() {
 
     fun listProducts(providerId: String) = service.listProducts(providerId)
 
-    fun findItems(providerId: String, query: String) = service.findProduct(providerId, query)
+    fun findProducts(providerId: String, query: String) = service.findProduct(providerId, query)
 }

@@ -16,7 +16,7 @@
 
             <ImageView
                 android:id="@+id/imItem"
-                android:layout_width="80dp"
+                android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:src="@drawable/image_place_holder" />
 

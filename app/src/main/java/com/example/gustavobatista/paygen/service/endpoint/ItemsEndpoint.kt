@@ -10,7 +10,7 @@ interface ItemsEndpoint {
     @GET("product/listProducts/{providerId}")
     fun listProducts(@Path("providerId") providerId: String): Observable<List<Item>>
 
-    @GET("item/findProduct/{providerId}/{query}")
+    @GET("product/findProduct/{providerId}/{query}")
     fun findProduct(@Path("providerId") providerId: String,
                     @Path("query") query: String): Observable<List<Item>>
 
