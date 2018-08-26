@@ -15,7 +15,7 @@ class AddCustomerActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_customer)
         setupToolbar(R.string.title_new_customer)
-        btCadastrar.setOnClickListener { checkFields() }
+        btSave.setOnClickListener { checkFields() }
     }
 
     private fun checkFields() {

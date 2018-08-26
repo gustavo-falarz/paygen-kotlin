@@ -25,7 +25,7 @@ class ItemAdapter(private val items: List<Item>) :
 
         fun bindView(item: Item) = with(itemView) {
             tvPrice.text = item.price.currency()
-            tvDesc.text = item.description
+            tvDesc.text = item.name
         }
     }
 

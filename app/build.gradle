@@ -21,12 +21,14 @@ android {
             minifyEnabled false
             debuggable true
             buildConfigField('String', 'URL_BASE', properties('debug.server.url'))
+            buildConfigField('String', 'URL_CLOUDINARY', properties('debug.cloudinary.url'))
             buildConfigField('String', 'URL_CIELO', properties('debug.cielo.url'))
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField('String', 'URL_BASE', properties('release.server.url'))
+            buildConfigField('String', 'URL_CLOUDINARY', properties('release.cloudinary.url'))
             buildConfigField('String', 'URL_CIELO', properties('release.cielo.url'))
         }
     }
@@ -55,11 +57,15 @@ dependencies {
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.2'
     implementation 'com.github.satyan:sugar:1.5'
     implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.github.jkwiecien:EasyImage:2.1.0'
     implementation 'com.github.clans:fab:1.6.4'
     implementation "com.google.android.gms:play-services-maps:$google_gms_lib_version"
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
 }
 
 apply plugin: 'com.google.gms.google-services'

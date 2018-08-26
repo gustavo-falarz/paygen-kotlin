@@ -2,10 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_pay"
+        android:id="@+id/action_one_day"
         android:orderInCategory="100"
-        android:iconTint="@color/black"
-        android:icon="@drawable/ic_payment_black"
-        android:title="@string/action_pay"
+        android:title="@string/label_one_day"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_seven_days"
+        android:orderInCategory="100"
+        android:title="@string/label_seven_days"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_thirty_days"
+        android:orderInCategory="100"
+        android:title="@string/label_thirty_days"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_custom_date"
+        android:orderInCategory="100"
+        android:title="@string/label_custom_date"
         app:showAsAction="never" />
 </menu>

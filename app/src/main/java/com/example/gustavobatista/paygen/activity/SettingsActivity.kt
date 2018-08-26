@@ -13,6 +13,11 @@ class SettingsActivity : BaseActivity() {
         setupActionBar()
 
         btChangePassword.setOnClickListener { onClickChangePassword() }
+        btProfile.setOnClickListener { onClickEditProfile() }
+    }
+
+    private fun onClickEditProfile() {
+        startActivity<ProfileActivity>()
     }
 
     private fun onClickChangePassword() {

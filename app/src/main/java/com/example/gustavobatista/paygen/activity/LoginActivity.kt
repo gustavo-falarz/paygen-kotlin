@@ -89,15 +89,6 @@ class LoginActivity : BaseActivity() {
         }
     }
 
-    private fun handleLogin(loginDTO: LoginDTO) {
-        prefs.token = loginDTO.token
-        prefs.userId = loginDTO.userId
-        when {
-            loginDTO.status == User.Status.PENDING -> handleStatusPending()
-            else -> nextActivity()
-        }
-    }
-
     private fun handleStatusPending() {
         alert(getString(R.string.disclaimer_status_pending), getString(R.string.title_success)) {
             yesButton { startActivity<ChangePasswordActivity>() }
@@ -107,7 +98,7 @@ class LoginActivity : BaseActivity() {
     private fun onUserValidated(email: String?, name: String?) {
         AccessService.googleSignin(email!!, name!!).applySchedulers().subscribe(
                 {
-                    handleGoogleSignIn(it)
+                    handleLogin(it)
                 },
                 {
                     closeProgress()
@@ -119,12 +110,17 @@ class LoginActivity : BaseActivity() {
         )
     }
 
-    private fun handleGoogleSignIn(loginDTO: LoginDTO) {
-        prefs.userId = loginDTO.userId
-        prefs.token = loginDTO.token
-        prefs.googleSignIn = true
 
-        nextActivity()
+    private fun handleLogin(dto: LoginDTO) {
+        prefs.token = dto.token
+        prefs.providerId = dto.providerId
+        prefs.userId = dto.userId
+        prefs.picture = dto.picture
+        prefs.userName = dto.userName
+        when {
+            dto.status == User.Status.PENDING -> handleStatusPending()
+            else -> nextActivity()
+        }
     }
 
     private fun nextActivity() {

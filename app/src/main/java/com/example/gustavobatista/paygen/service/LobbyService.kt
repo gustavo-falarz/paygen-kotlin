@@ -8,4 +8,6 @@ object LobbyService {
         get() = Service.createService(LobbyEndpoint::class.java)
 
     fun checkIn(userId: String, providerId: String) = service.checkIn(userId, providerId)
+
+    fun checkOut(userId: String, providerId: String) = service.checkOut(userId, providerId)
 }

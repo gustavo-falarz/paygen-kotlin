@@ -8,4 +8,7 @@ interface LobbyEndpoint {
 
     @GET("lobby/checkIn/{userId}/{providerId}")
     fun checkIn(@Path("userId") userId: String, @Path("providerId") providerID: String): Observable<String>
+
+    @GET("lobby/checkOut/{userId}/{providerId}")
+    fun checkOut(@Path("userId") userId: String, @Path("providerId") providerID: String): Observable<String>
 }

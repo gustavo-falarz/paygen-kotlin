@@ -5,6 +5,7 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
+import android.widget.TextView
 import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.entity.dataclass.ProviderDataClass
 import com.example.gustavobatista.paygen.fragment.CheckedInFragment
@@ -12,6 +13,8 @@ import com.example.gustavobatista.paygen.fragment.ProvidersFragment
 import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.CustomerService
 import com.example.gustavobatista.paygen.util.UserInfo
+import com.example.gustavobatista.paygen.util.ImageUtil.load
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import org.jetbrains.anko.clearTask
@@ -20,6 +23,8 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+    lateinit var tvName: TextView
+    lateinit var logoImage: CircleImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +36,22 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
-
-
+        val header = nav_view.getHeaderView(0)
+        logoImage = header.findViewById(R.id.headerImage)
+        logoImage.setOnClickListener { startActivity<ProfileActivity>() }
+        tvName = header.findViewById(R.id.tvName)
+        tvName.text = prefs.userName
     }
+
+    //TODO Habilitar localização
 
     override fun onStart() {
         super.onStart()
+        tvName.text = prefs.userName
+        logoImage.load(prefs.picture) { request ->
+            request.resize(400, 400).centerCrop()
+        }
+
         checkReception()
     }
 

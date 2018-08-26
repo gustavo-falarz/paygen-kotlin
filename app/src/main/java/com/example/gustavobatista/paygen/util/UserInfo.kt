@@ -6,8 +6,10 @@ import com.example.gustavobatista.paygen.PaygenApplication.Companion.prefs
 import com.example.gustavobatista.paygen.util.Constants.PREF_GOOGLE
 import com.example.gustavobatista.paygen.util.Constants.PREF_ID
 import com.example.gustavobatista.paygen.util.Constants.PREF_KEY
+import com.example.gustavobatista.paygen.util.Constants.PREF_PICTURE
 import com.example.gustavobatista.paygen.util.Constants.PREF_PROVIDER_ID
 import com.example.gustavobatista.paygen.util.Constants.PREF_TOKEN
+import com.example.gustavobatista.paygen.util.Constants.PREF_USERNAME
 import com.firebase.ui.auth.AuthUI
 
 /**
@@ -24,6 +26,9 @@ class UserInfo(context: Context) {
                     }
             prefs.token = ""
             prefs.userId = ""
+            prefs.userId = ""
+            prefs.userName = ""
+            prefs.picture = ""
             prefs.googleSignIn = false
         }
     }
@@ -43,4 +48,12 @@ class UserInfo(context: Context) {
     var providerId: String
         get() = prefs.getString(PREF_PROVIDER_ID, "")
         set(value) = prefs.edit().putString(PREF_PROVIDER_ID, value).apply()
+
+    var picture: String
+        get() = prefs.getString(PREF_PICTURE, "")
+        set(value) = prefs.edit().putString(PREF_PICTURE, value).apply()
+
+    var userName: String
+        get() = prefs.getString(PREF_USERNAME, "")
+        set(value) = prefs.edit().putString(PREF_USERNAME, value).apply()
 }

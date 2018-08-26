@@ -3,6 +3,7 @@ package com.example.gustavobatista.paygen.service.endpoint
 
 import com.example.gustavobatista.paygen.entity.Customer
 import com.example.gustavobatista.paygen.entity.Provider
+import com.example.gustavobatista.paygen.entity.dto.LoginDTO
 
 import io.reactivex.Observable
 import retrofit2.http.Body
@@ -16,15 +17,14 @@ import retrofit2.http.Path
 
 interface CustomerEndpoint {
 
-    @POST("customer/addCustomer")
+    @POST("access/addCustomer")
     fun addUser(@Body customer: Customer): Observable<String>
-
-    @GET("customer/findCustomer/{cpf}")
-    fun findCustomer(@Path("cpf") cpf: String): Observable<Customer>
-
-    @POST("customer/listAllCustomers")
-    fun listAllCustomers(): Observable<List<Customer>>
 
     @GET("customer/checkReception/{customerId}")
     fun checkReception(@Path("customerId") customerId: String): Observable<Provider>
+
+    @POST("customer/updateProfile")
+    fun updateProfile(@Body dto: LoginDTO): Observable<String>
+
+
 }

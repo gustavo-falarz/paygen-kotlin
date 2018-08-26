@@ -20,7 +20,7 @@ class AddPaymentMethodActivity : BaseActivity() {
         setContentView(R.layout.activity_add_payment_method)
         setupToolbar(R.string.title_add_credit_card)
         setupActionBar()
-        btCadastrar.setOnClickListener { onClickCadastrar() }
+        btSave.setOnClickListener { onClickCadastrar() }
     }
 
 

@@ -2,6 +2,7 @@ package com.example.gustavobatista.paygen.service
 
 
 import com.example.gustavobatista.paygen.entity.Customer
+import com.example.gustavobatista.paygen.entity.dto.LoginDTO
 import com.example.gustavobatista.paygen.service.endpoint.CustomerEndpoint
 
 /**
@@ -12,12 +13,9 @@ object CustomerService : Service() {
 
     fun addUser(customer: Customer) = service.addUser(customer)
 
-    fun findCustomer(cpf: String) = service.findCustomer(cpf)
-
-    fun listAllCustomers() = service.listAllCustomers()
-
     fun checkReception(customerId: String) = service.checkReception(customerId)
 
+    fun updateProfile(dto: LoginDTO) = service.updateProfile(dto)
 
     private val service: CustomerEndpoint
         get() = Service.createService(CustomerEndpoint::class.java)

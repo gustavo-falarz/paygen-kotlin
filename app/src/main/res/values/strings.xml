@@ -100,5 +100,17 @@
     <string name="action_pay">Pagar</string>
     <string name="title_menu">Cardapio</string>
     <string name="action_add_items">Adiconar itens à comanda</string>
+    <string name="disclaimer_checkout">Você não possui nenhum consumo <u> clique aqui para sair</u></string>
+    <string name="disclaimer_camera_usage">Para prosseguir precisamos de permissão para acessar sua camera</string>
+    <string name="title_picker">Fonte da imagem</string>
+    <string name="warning_empty_name">Nome não pode estar vázio</string>
+    <string name="warning_no_consumption">Nenhum consumo nesta comanda</string>
+    <string name="title_checkout">Checkout</string>
+    <string name="message_checkout">Tem certeza que deseja realizar checkout deste estabelecimento?</string>
+    <string name="title_edit_profile">Editar seu perfil</string>
+    <string name="label_one_day">Último dia</string>
+    <string name="label_thirty_days">Últimos 30 dias</string>
+    <string name="label_seven_days">Útimos 7 dias</string>
+    <string name="label_custom_date">Data customizada</string>
 
 </resources>

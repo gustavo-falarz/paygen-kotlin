@@ -15,11 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDo0S-LCOvTf-nSevPB8hyNtchItcDQiKI" />
-
         <meta-data
             android:name="DATABASE"
             android:value="sugar_example.db" />
@@ -74,10 +72,9 @@
             android:label="@string/title_settings"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.MenuActivity" />
-
         <activity
-            android:label="@string/title_purchases"
             android:name=".activity.PurchasesActivity"
+            android:label="@string/title_purchases"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.PurchaseDetailsActivity"
@@ -87,6 +84,7 @@
             android:name=".activity.AddItemsActivity"
             android:label="@string/title_menu"
             android:screenOrientation="portrait" />
+        <activity android:name=".activity.ProfileActivity"></activity>
     </application>
 
 </manifest>
