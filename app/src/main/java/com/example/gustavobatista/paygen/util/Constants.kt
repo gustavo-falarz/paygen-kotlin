@@ -12,6 +12,9 @@ object Constants {
     const val PREF_PICTURE = "picture"
     const val PREF_USERNAME = "username"
     const val PREF_PROVIDER_ID = "provider"
+    const val PREF_LATITUDE = "long"
+    const val PREF_LONGITUDE= "lat"
+
     const val TRANSITION_KEY_PROVIDER: String = "provider"
     const val TRANSITION_KEY_ITEMS: String = "items"
     const val TRANSITION_KEY_TRANSACTION: String = "transaction"

@@ -11,8 +11,10 @@ import com.example.gustavobatista.paygen.R
 import com.example.gustavobatista.paygen.activity.ProviderActivity
 import com.example.gustavobatista.paygen.adapter.ProviderAdapter
 import com.example.gustavobatista.paygen.entity.Provider
+import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.ProviderService
 import com.example.gustavobatista.paygen.util.Constants
+import io.reactivex.Observable
 import kotlinx.android.synthetic.main.fragment_providers.*
 
 class ProvidersFragment : BaseFragment() {
@@ -29,7 +31,14 @@ class ProvidersFragment : BaseFragment() {
 
     private fun getProviders() {
         showProgress()
-        ProviderService.getProviders().applySchedulers().subscribe(
+        var observable: Observable<List<Provider>> =
+                if (prefs.latitude.isEmpty()) {
+                    ProviderService.getProviders()
+                } else {
+                    ProviderService.findProvidersByLocation(prefs.latitude, prefs.longitude)
+                }
+
+        observable.applySchedulers().subscribe(
                 {
                     setAdapter(it)
                     closeProgress()

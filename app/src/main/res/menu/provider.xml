@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_restaurant"
+        android:orderInCategory="100"
+        android:title="Restaurantes"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_stores"
+        android:orderInCategory="100"
+        android:title= "Lojas"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_services"
+        android:orderInCategory="100"
+        android:title="Serviços"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_custom_date"
+        android:orderInCategory="100"
+        android:title="@string/label_custom_date"
+        app:showAsAction="never" />
+</menu>

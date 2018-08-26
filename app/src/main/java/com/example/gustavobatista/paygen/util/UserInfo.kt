@@ -6,6 +6,8 @@ import com.example.gustavobatista.paygen.PaygenApplication.Companion.prefs
 import com.example.gustavobatista.paygen.util.Constants.PREF_GOOGLE
 import com.example.gustavobatista.paygen.util.Constants.PREF_ID
 import com.example.gustavobatista.paygen.util.Constants.PREF_KEY
+import com.example.gustavobatista.paygen.util.Constants.PREF_LATITUDE
+import com.example.gustavobatista.paygen.util.Constants.PREF_LONGITUDE
 import com.example.gustavobatista.paygen.util.Constants.PREF_PICTURE
 import com.example.gustavobatista.paygen.util.Constants.PREF_PROVIDER_ID
 import com.example.gustavobatista.paygen.util.Constants.PREF_TOKEN
@@ -56,4 +58,12 @@ class UserInfo(context: Context) {
     var userName: String
         get() = prefs.getString(PREF_USERNAME, "")
         set(value) = prefs.edit().putString(PREF_USERNAME, value).apply()
+
+    var latitude: String
+        get() = prefs.getString(PREF_LATITUDE, "")
+        set(value) = prefs.edit().putString(PREF_LATITUDE, value).apply()
+
+    var longitude: String
+        get() = prefs.getString(PREF_LONGITUDE, "")
+        set(value) = prefs.edit().putString(PREF_LONGITUDE, value).apply()
 }

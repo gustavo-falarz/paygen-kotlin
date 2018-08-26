@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import com.example.gustavobatista.paygen.R
@@ -12,8 +13,8 @@ import com.example.gustavobatista.paygen.fragment.CheckedInFragment
 import com.example.gustavobatista.paygen.fragment.ProvidersFragment
 import com.example.gustavobatista.paygen.prefs
 import com.example.gustavobatista.paygen.service.CustomerService
-import com.example.gustavobatista.paygen.util.UserInfo
 import com.example.gustavobatista.paygen.util.ImageUtil.load
+import com.example.gustavobatista.paygen.util.UserInfo
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -23,8 +24,9 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
-    lateinit var tvName: TextView
-    lateinit var logoImage: CircleImageView
+    private lateinit var tvName: TextView
+    private lateinit var logoImage: CircleImageView
+    private var checkedIn = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +45,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         tvName.text = prefs.userName
     }
 
-    //TODO Habilitar localização
-
     override fun onStart() {
         super.onStart()
         tvName.text = prefs.userName
@@ -61,9 +61,11 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 {
                     when (it.name.isEmpty()) {
                         true -> {
+                            checkedIn = false
                             fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
                         }
                         else -> {
+                            checkedIn = true
                             prefs.providerId = it.id
                             ProviderDataClass.provider = it
                             fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }

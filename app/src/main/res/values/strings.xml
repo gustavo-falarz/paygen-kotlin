@@ -112,5 +112,7 @@
     <string name="label_thirty_days">Últimos 30 dias</string>
     <string name="label_seven_days">Útimos 7 dias</string>
     <string name="label_custom_date">Data customizada</string>
+    <string name="disclaimer_location_usage">Para desfrutar de todas os benefícios do app aconselhamos que vocês autorize o usuo da sua localização</string>
+    <string name="message_welcome">Bem vindo</string>
 
 </resources>

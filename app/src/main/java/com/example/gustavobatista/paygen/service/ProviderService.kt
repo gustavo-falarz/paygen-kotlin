@@ -9,4 +9,7 @@ object ProviderService {
         get() = Service.createService(ProviderEndpoint::class.java)
 
     fun getProviders(): Observable<List<Provider>> = service.getProviders()
+
+    fun findProvidersByLocation(latitude: String, longitude: String): Observable<List<Provider>> =
+            service.findProvidersByLocation(latitude, longitude)
 }

@@ -41,6 +41,7 @@ class PurchasesActivity : BaseActivity() {
             R.id.action_one_day -> filterSales(1)
             R.id.action_seven_days -> filterSales(7)
             R.id.action_thirty_days -> filterSales(30)
+            else -> super.onBackPressed()
         }
         return true
     }
