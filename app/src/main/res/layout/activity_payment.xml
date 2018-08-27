@@ -82,7 +82,7 @@
     <Button
         android:id="@+id/btPay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/button_height"
         android:background="@color/green_400"
         android:text="@string/label_pay"
         android:textColor="@color/white" />

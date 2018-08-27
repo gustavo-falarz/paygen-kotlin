@@ -39,6 +39,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/card_holder"
             android:inputType="textCapWords"
+            android:imeOptions="actionNext"
+            android:nextFocusLeft="@+id/etExpiryMonth"
             android:maxLength="255"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
@@ -65,6 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/card_expiry_mm"
+                android:imeOptions="actionNext"
+                android:nextFocusLeft="@+id/etExpiryYear"
                 android:inputType="number"
                 android:maxLength="2" />
         </android.support.design.widget.TextInputLayout>
@@ -81,6 +85,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/card_expiry_aa"
+                android:imeOptions="actionNext"
+                android:nextFocusLeft="@+id/etSecurityCode"
                 android:inputType="number"
                 android:maxLength="2" />
         </android.support.design.widget.TextInputLayout>
@@ -107,7 +113,7 @@
         android:id="@+id/btSave"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/button_height"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
