@@ -14,7 +14,6 @@ import com.example.gustavobatista.paygen.activity.PaymentActivity
 import com.example.gustavobatista.paygen.adapter.ItemAdapter
 import com.example.gustavobatista.paygen.entity.Consumption
 import com.example.gustavobatista.paygen.entity.Item
-import com.example.gustavobatista.paygen.entity.Lobby
 import com.example.gustavobatista.paygen.entity.Transaction
 import com.example.gustavobatista.paygen.entity.dataclass.ProviderDataClass
 import com.example.gustavobatista.paygen.prefs

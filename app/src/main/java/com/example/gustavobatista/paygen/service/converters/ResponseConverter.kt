@@ -1,13 +1,12 @@
 package com.example.gustavobatista.paygen.service.converters
 
+
+import com.example.gustavobatista.paygen.entity.Response
 import com.example.gustavobatista.paygen.util.ServerException
-
-
-import java.io.IOException
-
 import okhttp3.ResponseBody
 import retrofit2.Converter
-import com.example.gustavobatista.paygen.entity.Response
+import java.io.IOException
+
 /**
  * Created by Gustavo on 10/19/2017.
  */
