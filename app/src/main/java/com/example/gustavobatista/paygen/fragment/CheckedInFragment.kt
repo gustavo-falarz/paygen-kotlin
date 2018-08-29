@@ -124,11 +124,13 @@ class CheckedInFragment : BaseFragment() {
     private fun setAdapter(consumption: Consumption) {
         items = consumption.items
         if (consumption.items.isEmpty()) {
-            tvEmptyRecycler.visibility = View.VISIBLE
             recyclerView.visibility = View.GONE
+            tvEmptyRecycler.visibility = View.VISIBLE
+            tvTotal.text = SaleUtils.getTotalCost(consumption.items).currency()
+
         } else {
-            tvEmptyRecycler.visibility = View.GONE
             recyclerView.visibility = View.VISIBLE
+            tvEmptyRecycler.visibility = View.GONE
             tvTotal.text = SaleUtils.getTotalCost(consumption.items).currency()
             val adapter = ItemAdapter(consumption.items)
             recyclerView.adapter = adapter
