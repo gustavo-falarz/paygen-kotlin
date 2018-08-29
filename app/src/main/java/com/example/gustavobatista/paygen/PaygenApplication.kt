@@ -21,6 +21,7 @@ class PaygenApplication : SugarApp() {
 
     override fun onCreate() {
         super.onCreate()
+        instance = this
         prefs = UserInfo(applicationContext)
 
     }

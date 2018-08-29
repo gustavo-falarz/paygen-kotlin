@@ -87,9 +87,9 @@
     <string name="title_settings">Configurações</string>
     <string name="label_settings">Configurações</string>
 
-    <string name="restaurant">Restaurante</string>
-    <string name="hamburguer">Hamburgueria</string>
-    <string name="pizza">Pizzaria</string>
+    <string name="restaurant">Restaurantes</string>
+    <string name="hamburguer">Hamburguerias</string>
+    <string name="pizza">Pizzarias</string>
     <string name="title_address">Endereço</string>
     <string name="label_delivery">Delivery</string>
     <string name="title_add_items">Itens</string>
@@ -120,5 +120,6 @@
     <string name="bt_ok">OK</string>
     <string name="warning_invalid_date">Datas inválidas</string>
     <string name="warning_start_end_date">Data ínicio não pode ser menor que a data fim</string>
+    <string name="all">Todos</string>
 
 </resources>

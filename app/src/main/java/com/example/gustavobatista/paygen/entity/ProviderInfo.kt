@@ -11,7 +11,8 @@ class ProviderInfo(var address: String, var about: String, var type: Type, var o
     enum class Type(var stringRes: Int) {
         RESTAURANT(R.string.restaurant),
         HAMBURGUER(R.string.hamburguer),
-        PIZZA(R.string.pizza);
+        PIZZA(R.string.pizza),
+        ALL(R.string.all);
 
         override fun toString(): String {
             return PaygenApplication.applicationContext().getString(stringRes)
