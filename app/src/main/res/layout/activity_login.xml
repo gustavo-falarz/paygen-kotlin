@@ -12,7 +12,7 @@
     tools:context=".activity.LoginActivity">
 
     <ImageView
-        android:src="@drawable/logo"
+        android:src="@drawable/paygen_logo"
         android:layout_margin="28dp"
         android:layout_gravity="center"
         android:layout_width="80dp"
