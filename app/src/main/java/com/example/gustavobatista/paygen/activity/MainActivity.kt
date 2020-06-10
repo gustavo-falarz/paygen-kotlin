@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.TextView
 import com.example.gustavobatista.paygen.R
@@ -61,13 +62,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     when (it.name.isEmpty()) {
                         true -> {
                             checkedIn = false
-                            fragmentManager.inTransaction { add(R.id.container, ProvidersFragment()) }
+                            fragmentManager.inTransaction { replace(R.id.container, ProvidersFragment()) }
                         }
                         else -> {
                             checkedIn = true
                             prefs.providerId = it.id
                             ProviderDataClass.provider = it
-                            fragmentManager.inTransaction { add(R.id.container, CheckedInFragment()) }
+                            fragmentManager.inTransaction { replace(R.id.container, CheckedInFragment()) }
                         }
                     }
                 },

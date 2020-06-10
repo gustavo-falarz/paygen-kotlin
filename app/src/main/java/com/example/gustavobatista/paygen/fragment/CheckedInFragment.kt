@@ -27,6 +27,7 @@ import kotlinx.android.synthetic.main.fragment_checked_in.*
 import org.jetbrains.anko.*
 
 class CheckedInFragment : BaseFragment() {
+    private var canFinish = true
     private lateinit var items: List<Item>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +53,7 @@ class CheckedInFragment : BaseFragment() {
 
     private fun onClickPay() {
         fabMenu.hideMenu(true)
-        if (items.isEmpty()){
+        if (items.isEmpty()) {
             showWarning(getString(R.string.warning_no_consumption))
             return
         }
@@ -80,11 +81,15 @@ class CheckedInFragment : BaseFragment() {
                 .applySchedulers()
                 .subscribe(
                         {
-                            setAdapter(it)
+                            if (canFinish) {
+                                setAdapter(it)
+                            }
                             closeProgress()
                         },
                         {
-                            handleException(it)
+                            if (canFinish) {
+                                handleException(it)
+                            }
                             closeProgress()
                         }
                 )
@@ -98,7 +103,9 @@ class CheckedInFragment : BaseFragment() {
                 },
                 {
                     closeProgress()
-                    handleException(it)
+                    if (canFinish) {
+                        handleException(it)
+                    }
                 },
                 {
                     closeProgress()
@@ -107,7 +114,7 @@ class CheckedInFragment : BaseFragment() {
 
     private fun confirmCheckout() {
         alert(getString(R.string.message_checkout), getString(R.string.title_checkout)) {
-            yesButton { checkOut()}
+            yesButton { checkOut() }
             noButton { }
         }.show()
     }
@@ -134,5 +141,11 @@ class CheckedInFragment : BaseFragment() {
             val adapter = ItemAdapter(consumption.items)
             recyclerView.adapter = adapter
         }
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        canFinish = false
     }
 }

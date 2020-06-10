@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.fragment_providers.*
 
 class ProvidersFragment : BaseFragment() {
     lateinit var list: List<Provider>
+    var canFinish = true
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -70,12 +71,16 @@ class ProvidersFragment : BaseFragment() {
 
         observable.applySchedulers().subscribe(
                 {
-                    list = it
-                    setAdapter(it)
+                    if (canFinish) {
+                        list = it
+                        setAdapter(it)
+                    }
                     closeProgress()
                 },
                 {
-                    handleException(it)
+                    if (canFinish) {
+                        handleException(it)
+                    }
                     closeProgress()
                 }
         )
@@ -94,5 +99,10 @@ class ProvidersFragment : BaseFragment() {
         val intent = Intent(activity, ProviderActivity::class.java)
         intent.putExtra(Constants.TRANSITION_KEY_PROVIDER, provider)
         startActivity(intent)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        canFinish = false
     }
 }
